@@ -6,21 +6,22 @@ export const HomeStyles = StyleSheet.create({
         maxHeight: 45
     },
     titleHistoryItem: {
-        fontFamily: "AmericanTypewriter-Bold"
+        fontFamily: "sans-serif-condensed",
+        fontWeight: "bold"
     },
     scoreHistoryItem: {
-        fontFamily: "AmericanTypewriter-Bold",
+        fontFamily: "sans-serif-condensed",
         fontWeight: "bold"
     },
     headerContainer: {
         backgroundColor: "#00CE9F",
-        height: 30
     },
     headerBodyTitle: {
-        textAlign: "center",
+        //textAlign: "center",
         fontWeight: "bold",
         color: "white",
-        fontSize: 20
+        fontSize: 20,
+        paddingTop: 15
     },
     bannerImage: {
         height: 130,
@@ -29,7 +30,8 @@ export const HomeStyles = StyleSheet.create({
     },
     category: {
         fontSize: 18,
-        fontFamily: "AmericanTypewriter-Bold",
+        fontFamily: "sans-serif-condensed",
+        fontWeight: "bold",
         padding: 10
     },
     cardStyle: {
@@ -46,7 +48,8 @@ export const HomeStyles = StyleSheet.create({
     },
     courseTitle: {
         fontSize: 20,
-        fontFamily: "AmericanTypewriter-Bold"
+        fontFamily: "sans-serif-condensed",
+        fontWeight: "bold"
     },
     cardBody: {
         backgroundColor: "transparent",
@@ -54,7 +57,8 @@ export const HomeStyles = StyleSheet.create({
     },
     testingTitle: {
         fontSize: 20,
-        fontFamily: "AmericanTypewriter-Bold",
+        fontFamily: "sans-serif-condensed",
+        fontWeight: "bold"
     },
     testingNoteContainer: {
         display: "flex",
@@ -67,7 +71,27 @@ export const HomeStyles = StyleSheet.create({
     },
     testingNoteTitle: {
         fontSize: 15,
-        fontFamily: "AmericanTypewriter-Bold",
-        padding: 5
+        fontFamily: "sans-serif-condensed",
+        padding: 5,
+        fontWeight: "bold"
+    },
+    segmentStyle: {
+        backgroundColor: '#00CE9F',
+        width: 220
+    }
+});
+
+export const CourseOverViewStyles = StyleSheet.create({
+    title: {
+    },
+    overViewContent: {
+        fontFamily: "sans-serif-condensed",
+        fontWeight: "bold",
+        fontSize: 18,
+        marginTop: 10
+    },
+    forwardIconList: {
+        color: "#fff",
+        fontSize: 25
     }
 })

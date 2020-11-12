@@ -22,3 +22,9 @@ export type TabStackParamList = {
   HomeApp: undefined;
   VocabularyOverview: undefined;
 }
+export type CourseOverviewType = {
+  totalUnits: number;
+  completedUnits?: number;
+  completedTest?: number;
+  thumbnail?: any;
+}

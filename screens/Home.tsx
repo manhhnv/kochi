@@ -6,7 +6,7 @@ import {
   Segment
 }
 from 'native-base';
-import { Animated, Image } from 'react-native';
+import { Animated, Image, ImageBackground } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import ProgressCircle from 'react-native-progress-circle'
 import { HomeStyles } from '../styles/index';
@@ -106,6 +106,9 @@ export default function Home({navigation}: any) {
           <Right />
         </Header>
       </Animated.View>
+      
+      <ImageBackground source={{ uri: "https://reactjs.org/logo-og.png" }} style={{width: 1000}}></ImageBackground>
+      
       <Content style={{ marginHorizontal: 5 }}>
         <ScrollView>
           <Content>
@@ -265,9 +268,9 @@ export default function Home({navigation}: any) {
               </Col>
             </Row>
             <Text style={HomeStyles.category}>Lịch sử gần đây</Text>
-            <Segment style={{ width: 230 }}>
-              <Button onPress={() => setSegmentIndex(1)} active={segmentIndex == 1 ? true : false} first style={{ width: 100 }}><Text>Luyện tập</Text></Button>
-              <Button onPress={() => setSegmentIndex(2)} active={segmentIndex == 2 ? true : false} last style={{ width: 100 }}><Text>Thi thử</Text></Button>
+            <Segment style={HomeStyles.segmentStyle}>
+              <Button onPress={() => setSegmentIndex(1)} active={segmentIndex == 1 ? true : false} first ><Text>Luyện tập</Text></Button>
+              <Button onPress={() => setSegmentIndex(2)} active={segmentIndex == 2 ? true : false} last ><Text>Thi thử</Text></Button>
             </Segment>
             <Content padder>
               {_renderComponentBySegment()}
