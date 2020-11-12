@@ -7,18 +7,17 @@ import {
 import CourseOverview from '../components/CourseOverview';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Animated, Dimensions, Image, ImageBackground } from 'react-native';
-import FlipCard from "react-native-flip-card";
 
-export default function TabTwoScreen() {
+export default function TabTwoScreen({navigation}: any) {
   const thumbnail = require('../assets/images/courses/vocabulary.jpg');
   // style={{ backgroundColor: "#ECEDED" }}
   return (
     <Container >
       <Content>
-        <ImageBackground source={{uri: 'https://androidwalls.net/wp-content/uploads/2016/03/Vertical%20Dark%20Green%20Gradient%20Android%20Wallpaper.jpg'}} style={{ width: Dimensions.get('screen').width }}>
+        <ImageBackground source={require('../assets/images/background.jpg')} style={{ width: Dimensions.get('screen').width }}>
         <CourseOverview totalUnits={6} thumbnail={thumbnail}></CourseOverview>
           <List>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Lesson")}>
               <ListItem style={{ marginRight: 12 ,backgroundColor: "white", marginTop: 50, paddingLeft: 10, borderRadius: 5, height: 80, opacity: 0.9 }}>
                 <Left>
                   <Text style={{ fontWeight: "bold", fontSize: 18 }}>Bai 1:</Text>
@@ -110,22 +109,6 @@ export default function TabTwoScreen() {
               </ListItem>
             </TouchableOpacity>
           </List>
-          <FlipCard>
-            <View style={{backgroundColor: "red", borderStyle: "solid", borderColor: "black", height: 100, }}>
-              <Text>Face</Text>
-            </View>
-            <View style={{backgroundColor: "green", borderStyle: "solid", borderColor: "black", height: 100, }}>
-              <Text>Back</Text>
-            </View>
-          </FlipCard>
-          <FlipCard>
-            <View style={{backgroundColor: "white", borderStyle: "solid", borderColor: "black", height: 100, }}>
-              <Text>Face</Text>
-            </View>
-            <View style={{backgroundColor: "white", borderStyle: "solid", borderColor: "black", height: 100, }}>
-              <Text>Back</Text>
-            </View>
-          </FlipCard>
         </ImageBackground>
         
       </Content>

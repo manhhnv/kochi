@@ -7,6 +7,7 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import Home from '../screens/Home';
 import TabTwoScreen from '../screens/TabTwoScreen';
+import Vocabularies from '../screens/Vocabularies';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabStackParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -64,6 +65,15 @@ export function TabStackNavigator() {
           headerLeft: () => (
             null
           )
+        }}
+      />
+      <TabStack.Screen
+        name="Lesson"
+        component={Vocabularies}
+        options={{
+          headerTitle: 'Bài học',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
       />
     </TabStack.Navigator>

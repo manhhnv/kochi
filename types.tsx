@@ -21,10 +21,18 @@ export type TabTwoParamList = {
 export type TabStackParamList = {
   HomeApp: undefined;
   VocabularyOverview: undefined;
+  Lesson: undefined;
 }
 export type CourseOverviewType = {
   totalUnits: number;
   completedUnits?: number;
   completedTest?: number;
   thumbnail?: any;
+}
+export type VocabularyFCardProps = {
+  kanji?: string;
+  hiragana: string;
+  vnjp?: string;
+  marked?: boolean;
+  mean: string;
 }

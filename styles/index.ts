@@ -87,7 +87,7 @@ export const CourseOverViewStyles = StyleSheet.create({
     overViewContent: {
         fontFamily: "sans-serif-condensed",
         fontWeight: "bold",
-        fontSize: 18,
+        fontSize: 16,
         marginTop: 10
     },
     forwardIconList: {
