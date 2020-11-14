@@ -6,3 +6,4 @@
     * Lịch sử: Người dùng có thể xem lại toàn bộ hoạt động kiểm tra, thi thử của mình trong vòng 1 tháng gần nhất
     * Audio: Có trong nghe hiểu, từ vựng, kiểm tra và thi thử
     * Auth: Đăng nhập, đăng ký bằng tài khoản gmail.
+    * Thông báo: Cập nhật thông báo về tính năng mới của app, update app,...
