@@ -31,8 +31,11 @@ export type CourseOverviewType = {
 }
 export type VocabularyFCardProps = {
   kanji?: string;
-  hiragana: string;
+  hiragana?: string;
   vnjp?: string;
   marked?: boolean;
-  mean: string;
+  mean?: string;
+  previousWord: any;
+  nextWord: any;
+  currentIndex: number;
 }
