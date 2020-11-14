@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Body, Container, Header, Left, Right, Title,
   List, ListItem, Content, Card, CardItem, Thumbnail,
@@ -10,7 +10,7 @@ import { Animated, Image, ImageBackground } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import ProgressCircle from 'react-native-progress-circle'
 import { HomeStyles } from '../styles/index';
-export default function Home({navigation}: any) {
+const Home = ({navigation}: any) => {
   const [showFAB, setShowFAB] = useState(false)
   const [segmentIndex, setSegmentIndex] = useState(1);
   const _renderComponentBySegment = () => {
@@ -301,3 +301,4 @@ export default function Home({navigation}: any) {
     </Container>
   );
 }
+export default React.memo(Home)

@@ -39,3 +39,13 @@ export type VocabularyFCardProps = {
   nextWord: any;
   currentIndex: number;
 }
+export type VocabularyPayload = {
+  data?: any;
+  totalWords?: number
+  from?: number;
+  to?: number
+}
+export type VocabularyActionType = {
+  type?: string;
+  payload?: VocabularyPayload;
+}

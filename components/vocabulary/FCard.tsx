@@ -25,8 +25,8 @@ const FCard = ({
 
                     elevation: 6,
                 }}>
-                    <Text style={{ textAlign: "center", position: "relative", top: 0.12 * height, fontSize: 35, flexWrap: "wrap" }}>{kanji}</Text>
-                    <Text style={{ textAlign: "center", position: "relative", top: 0.12 * height, fontSize: 30, flexWrap: "wrap", paddingTop: 20 }}>{vnjp}</Text>
+                    <Text style={{ textAlign: "center", position: "relative", top: 0.12 * height, fontSize: 35, flexWrap: "wrap" }}>{kanji ? kanji : hiragana}</Text>
+                    <Text style={{ textAlign: "center", position: "relative", top: 0.12 * height, fontSize: 30, flexWrap: "wrap", paddingTop: 20 }}>{vnjp ? vnjp : mean}</Text>
                     <Thumbnail square style={{ marginLeft: 0.07 * width }} source={require('../../assets/images/logo.png')}></Thumbnail>
                 </View>
                 <View style={{
