@@ -16,6 +16,7 @@ const Vocabularies = ({ route, navigation, getVocabularyLesson, courses }: any) 
     }
     const { lessonId } = route.params;
     useEffect(() => {
+        console.log(lessonId)
         getVocabularyLesson(lessonId);
     }, [])
     return (

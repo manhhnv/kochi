@@ -6,10 +6,11 @@ import {
   Segment
 }
 from 'native-base';
-import { Animated, Image, ImageBackground } from 'react-native';
+import { Animated, Dimensions, Image, ImageBackground } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import ProgressCircle from 'react-native-progress-circle'
 import { HomeStyles } from '../styles/index';
+const {width, height} = Dimensions.get('screen');
 const Home = ({navigation}: any) => {
   const [showFAB, setShowFAB] = useState(false)
   const [segmentIndex, setSegmentIndex] = useState(1);
@@ -269,8 +270,12 @@ const Home = ({navigation}: any) => {
             </Row>
             <Text style={HomeStyles.category}>Lịch sử gần đây</Text>
             <Segment style={HomeStyles.segmentStyle}>
-              <Button onPress={() => setSegmentIndex(1)} active={segmentIndex == 1 ? true : false} first ><Text>Luyện tập</Text></Button>
-              <Button onPress={() => setSegmentIndex(2)} active={segmentIndex == 2 ? true : false} last ><Text>Thi thử</Text></Button>
+              <Button style={{width: 150}} onPress={() => setSegmentIndex(1)} active={segmentIndex == 1 ? true : false} first >
+                <Text style={{textAlign: "center", paddingLeft: 0.1*width}}>Luyện tập</Text>
+              </Button>
+              <Button style={{width: 150}} onPress={() => setSegmentIndex(2)} active={segmentIndex == 2 ? true : false} last >
+                <Text style={{textAlign: "center", paddingLeft: 0.1*width}}>Thi thử</Text>
+              </Button>
             </Segment>
             <Content padder>
               {_renderComponentBySegment()}

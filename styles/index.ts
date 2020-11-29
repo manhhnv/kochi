@@ -77,7 +77,7 @@ export const HomeStyles = StyleSheet.create({
     },
     segmentStyle: {
         backgroundColor: '#00CE9F',
-        width: 220
+        width: 400,
     }
 });
 
