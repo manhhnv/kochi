@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Axios from "axios";
 import { USER_LOGIN, USER_REGISTER, QUERY_ME } from "../../service/user.service";
 import { LoginInput, RegisterInput } from "../../types";
@@ -22,8 +23,9 @@ export const userRegister = async (input: RegisterInput, callback?: any) => {
 export const userLogin = (input: LoginInput) => {
     return async (dispatch: any) => {
         Axios.post(`${USER_LOGIN.url}`, input)
-            .then(res => {
+            .then(async res => {
                 if (res.data !== null) {
+                    await AsyncStorage.setItem('token', res.data.data.accessToken)
                     dispatch({
                         type: LOGIN,
                         payload: res.data.data.accessToken

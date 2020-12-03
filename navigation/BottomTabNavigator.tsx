@@ -7,6 +7,7 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import Home from '../screens/Home';
 import Login from '../screens/Login';
+import Profile from '../screens/Profile';
 import Register from '../screens/Register';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import Vocabularies from '../screens/Vocabularies';
@@ -30,7 +31,7 @@ export default function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Profile"
-        component={Login}
+        component={Profile}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-person" color={color} />,
         }}

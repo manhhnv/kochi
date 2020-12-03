@@ -7,11 +7,12 @@ import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 import { store, persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import { resolverReload } from './redux/actions/reloadAction';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
-
+  store.dispatch(resolverReload())
   if (!isLoadingComplete) {
     return null;
   } else {
