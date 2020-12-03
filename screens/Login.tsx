@@ -82,7 +82,7 @@ class Login extends Component<any, any> {
     }
 
 
-    setSelectedType = (selectedType: any) =>
+    setSelectedType = (selectedType: any) => void
         LayoutAnimation.easeInEaseOut() || this.setState({ selectedType });
     componentDidMount() {
         console.log(this.props.user)

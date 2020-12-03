@@ -19,6 +19,8 @@ import { userRegister } from '../redux/actions/userAction';
 
 import {LinearGradient} from 'react-native-linear-gradient';
 import { FormInput } from '../components/auth/FormInput';
+import { UserTypeItem } from '../components/auth/UserTypeItem';
+
 
 UIManager.setLayoutAnimationEnabledExperimental &&
     UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -70,7 +72,6 @@ export default class Register extends Component<any, any> {
         const confirmationPasswordValid = this.validateConfirmationPassword();
         const firstNameValid = this.validateFirstName();
         const lastNameValid = this.validateLastName();
-        console.log(this.state)
         if (
             emailValid &&
             passwordValid &&
@@ -87,6 +88,14 @@ export default class Register extends Component<any, any> {
                 isActive: true
             }
             userRegister(input)
+            .then(res => {
+                if (res !== null) {
+                    this.props.navigator.navigate("Login")
+                }
+            })
+            .catch(e => {
+                console.log(e)
+            })
         }
     }
     validateFirstName() {
@@ -133,7 +142,7 @@ export default class Register extends Component<any, any> {
         return confirmationPasswordValid;
     }
 
-    setSelectedType = (selectedType: any) =>
+    setSelectedType = (selectedType: any) => void
         LayoutAnimation.easeInEaseOut() || this.setState({ selectedType });
 
     render() {
@@ -294,36 +303,9 @@ export default class Register extends Component<any, any> {
                         buttonStyle={{ backgroundColor: 'transparent' }}
                         useForeground
                         onPress={() => this.props.navigation.navigate('Login')}
-                        // onPress={() => this.setState({isLoading: true})}
                     />
                 </View>
             </ScrollView>
         );
     }
 }
-
-export const UserTypeItem = (props: any) => {
-    const { image, label, labelColor, selected, ...attributes } = props;
-    return (
-        <TouchableOpacity {...attributes}>
-            <View
-                style={[
-                    styles.userTypeItemContainer,
-                    selected && styles.userTypeItemContainerSelected,
-                ]}
-            >
-                <Text style={[styles.userTypeLabel, { color: labelColor }]}>
-                    {label}
-                </Text>
-                <Image
-                    source={image}
-                    style={[
-                        styles.userTypeMugshot,
-                        selected && styles.userTypeMugshotSelected,
-                    ]}
-                />
-            </View>
-        </TouchableOpacity>
-    );
-};
-

@@ -7,15 +7,16 @@ export const LOGOUT = "LOGOUT";
 export const ME = "ME";
 
 export const userRegister = async (input: RegisterInput, callback?: any) => {
-    Axios.post(`${USER_REGISTER.url}`, input)
+    const response = Axios.post(`${USER_REGISTER.url}`, input)
         .then(res => {
-            if (res.data != null) {
-                console.log(res.data)
+            if (res.data !== null && res.data?.data) {
+                return res.data.data
             }
         })
         .catch(e => {
             console.log(e)
         })
+    return response;
 }
 
 export const userLogin = (input: LoginInput) => {
