@@ -1,13 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunkMiddleware  from 'redux-thunk';
-import { composeWithDevTools  } from 'redux-devtools-extension';
+import { composeWithDevTools, devToolsEnhancer  } from 'redux-devtools-extension';
 import coursesReducer from './reducers/coursesReducer';
 import AsyncStorage  from '@react-native-community/async-storage';
 import { persistStore, persistReducer } from 'redux-persist';
-
-const rootReducer = combineReducers({
-    courses: coursesReducer
-})
+import userReducer from './reducers/userReducer';
+import rootReducer from './reducers/rootReducer';
 
 const persistConfig = {
     key: 'root',
