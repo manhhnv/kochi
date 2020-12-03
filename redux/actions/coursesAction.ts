@@ -15,6 +15,9 @@ export const getVocabularyLesson = (lessonId: number) => {
                     }
                     dispatch(action)
                 })
+                .catch(e => {
+                    console.log(e)
+                })
         }
         catch (error) {
             console.log(error)

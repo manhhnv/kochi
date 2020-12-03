@@ -1,3 +1,18 @@
+export enum HTTP_METHOD {
+  GET = "GET",
+  POST = "POST",
+  PUT = "PUT",
+  DELETE = "DELETE"
+}
+
+export type Api = {
+  url: string;
+  method: HTTP_METHOD
+}
+export type Action = {
+  type: string;
+  payload: any
+}
 export type RootStackParamList = {
   Root: undefined;
   NotFound: undefined;
@@ -7,6 +22,7 @@ export type BottomTabParamList = {
   TabOne: undefined;
   TabTwo: undefined;
   Home: undefined;
+  Profile: undefined;
 };
 
 export type TabOneParamList = {
@@ -22,6 +38,7 @@ export type TabStackParamList = {
   HomeApp: undefined;
   VocabularyOverview: undefined;
   Lesson: undefined;
+  Register: undefined;
 }
 export type CourseOverviewType = {
   totalUnits: number;
@@ -48,4 +65,19 @@ export type VocabularyPayload = {
 export type VocabularyActionType = {
   type?: string;
   payload?: VocabularyPayload;
+}
+
+export type RegisterInput = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  password_confirmation: string;
+  avatarUrl?: string;
+  isActive?: boolean;
+}
+
+export type LoginInput = {
+  email: string;
+  password: string
 }

@@ -10,10 +10,12 @@ import { Animated, Dimensions, Image, ImageBackground } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import ProgressCircle from 'react-native-progress-circle'
 import { HomeStyles } from '../styles/index';
+import { API_URL } from '../env';
 const {width, height} = Dimensions.get('screen');
 const Home = ({navigation}: any) => {
   const [showFAB, setShowFAB] = useState(false)
   const [segmentIndex, setSegmentIndex] = useState(1);
+  console.log(API_URL)
   const _renderComponentBySegment = () => {
     if (segmentIndex == 1) {
       return (

@@ -6,6 +6,8 @@ import * as React from 'react';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import Home from '../screens/Home';
+import Login from '../screens/Login';
+import Register from '../screens/Register';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import Vocabularies from '../screens/Vocabularies';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabStackParamList } from '../types';
@@ -27,25 +29,20 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoNavigator}
+        name="Profile"
+        component={Login}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-person" color={color} />,
         }}
       />
     </BottomTab.Navigator>
   );
 }
 
-// You can explore the built-in icon families and icons on the web at:
-// https://icons.expo.fyi/
 function TabBarIcon(props: { name: string; color: string }) {
   return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
-// Each tab has its own navigation stack, you can read more about this pattern here:
-// https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-// const TabOneStack = createStackNavigator<TabOneParamList>();
 const TabStack = createStackNavigator<TabStackParamList>();
 export function TabStackNavigator() {
   return (
@@ -62,9 +59,8 @@ export function TabStackNavigator() {
           headerTitle: 'Từ vựng',
           headerStyle: { backgroundColor: "#00CE9F" },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
-          headerLeft: () => (
-            null
-          )
+          headerBackTitleStyle: {color: 'white'},
+          headerBackTitle: 'Home'
         }}
       />
       <TabStack.Screen
@@ -76,37 +72,18 @@ export function TabStackNavigator() {
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
       />
+      <TabStack.Screen
+        name="Register"
+        component={Register}
+        options = {{
+          headerTitle: '',
+          headerLeft: () => null,
+          headerShown: false
+        }}
+      />
     </TabStack.Navigator>
   )
 }
-// export function TabOneNavigator() {
-//   return (
-//     <TabOneStack.Navigator>
-//       <TabOneStack.Screen
-//         name="HomeApp"
-//         component={BottomTabNavigator}
-//         options={{ headerShown: false }}
-//       />
-//       <TabOneStack.Screen
-//         name="TabOneScreen"
-//         component={TabOneScreen}
-//         options={{ headerTitle: 'Tab One Title', headerShown: false }}
-//       />
-//       <TabOneStack.Screen
-//         name="VocabularyOverview"
-//         component={TabTwoScreen}
-//         options={{
-//           headerTitle: 'Từ vựng',
-//           headerStyle: { backgroundColor: "#00CE9F" },
-//           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
-//           headerLeft: () => (
-//             null
-//           )
-//         }}
-//       />
-//     </TabOneStack.Navigator>
-//   );
-// }
 
 const TabTwoStack = createStackNavigator<TabTwoParamList>();
 
