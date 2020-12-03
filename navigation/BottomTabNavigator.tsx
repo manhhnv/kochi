@@ -48,6 +48,24 @@ export function TabStackNavigator() {
   return (
     <TabStack.Navigator>
       <TabStack.Screen
+        name="Login"
+        component={Login}
+        options = {{
+          headerTitle: '',
+          headerLeft: () => null,
+          headerShown: false
+        }}
+      />
+      <TabStack.Screen
+        name="Register"
+        component={Register}
+        options = {{
+          headerTitle: '',
+          headerLeft: () => null,
+          headerShown: false
+        }}
+      />
+      <TabStack.Screen
         name="HomeApp"
         component={BottomTabNavigator}
         options={{ headerShown: false }}
@@ -70,15 +88,6 @@ export function TabStackNavigator() {
           headerTitle: 'Bài học',
           headerStyle: { backgroundColor: "#00CE9F", },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
-        }}
-      />
-      <TabStack.Screen
-        name="Register"
-        component={Register}
-        options = {{
-          headerTitle: '',
-          headerLeft: () => null,
-          headerShown: false
         }}
       />
     </TabStack.Navigator>

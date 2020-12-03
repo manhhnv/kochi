@@ -21,11 +21,11 @@ export const styles = StyleSheet.create({
     signUpText: {
       color: 'white',
       fontSize: 28,
-      fontFamily: 'UbuntuLight',
+      // fontFamily: 'UbuntuLight',
     },
     whoAreYouText: {
       color: '#7384B4',
-      fontFamily: 'UbuntuBold',
+      // fontFamily: 'UbuntuBold',
       fontSize: 14,
     },
     userTypesContainer: {
@@ -53,7 +53,7 @@ export const styles = StyleSheet.create({
     },
     userTypeLabel: {
       color: 'yellow',
-      fontFamily: 'UbuntuBold',
+      // fontFamily: 'UbuntuBold',
       fontSize: 11,
     },
     inputContainer: {
@@ -68,7 +68,7 @@ export const styles = StyleSheet.create({
       flex: 1,
       marginLeft: 10,
       color: 'white',
-      fontFamily: 'UbuntuLight',
+      // fontFamily: 'UbuntuLight',
       fontSize: 16,
     },
     errorInputStyle: {
@@ -77,7 +77,7 @@ export const styles = StyleSheet.create({
       color: '#F44336',
     },
     signUpButtonText: {
-      fontFamily: 'UbuntuBold',
+      // fontFamily: 'UbuntuBold',
       fontSize: 13,
     },
     signUpButton: {
@@ -90,13 +90,13 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
     },
     alreadyAccountText: {
-      fontFamily: 'UbuntuLightItalic',
+      // fontFamily: 'UbuntuLightItalic',
       fontSize: 12,
       color: 'white',
     },
     loginHereText: {
       color: '#FF9800',
-      fontFamily: 'UbuntuLightItalic',
+      // fontFamily: 'UbuntuLightItalic',
       fontSize: 12,
     },
   });

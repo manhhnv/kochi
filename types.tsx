@@ -39,6 +39,7 @@ export type TabStackParamList = {
   VocabularyOverview: undefined;
   Lesson: undefined;
   Register: undefined;
+  Login: undefined;
 }
 export type CourseOverviewType = {
   totalUnits: number;

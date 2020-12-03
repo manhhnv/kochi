@@ -18,6 +18,8 @@ import { RegisterInput } from '../types';
 import { userRegister } from '../redux/actions/userAction';
 
 import {LinearGradient} from 'react-native-linear-gradient';
+import { FormInput } from '../components/auth/FormInput';
+
 UIManager.setLayoutAnimationEnabledExperimental &&
     UIManager.setLayoutAnimationEnabledExperimental(true);
 
@@ -291,8 +293,8 @@ export default class Register extends Component<any, any> {
                         containerStyle={{ flex: -1 }}
                         buttonStyle={{ backgroundColor: 'transparent' }}
                         useForeground
-                        // onPress={() => this.props.navigation.goBack()}
-                        onPress={() => this.setState({isLoading: true})}
+                        onPress={() => this.props.navigation.navigate('Login')}
+                        // onPress={() => this.setState({isLoading: true})}
                     />
                 </View>
             </ScrollView>
@@ -325,24 +327,3 @@ export const UserTypeItem = (props: any) => {
     );
 };
 
-export const FormInput = (props: any) => {
-    const { icon, refInput, ...otherProps } = props;
-    return (
-        <Input
-            {...otherProps}
-            ref={refInput}
-            inputContainerStyle={styles.inputContainer}
-            leftIcon={
-                <Icon name={icon} type={'simple-line-icon'} color="#7384B4" size={18} />
-            }
-            inputStyle={styles.inputStyle}
-            autoFocus={false}
-            autoCapitalize="none"
-            keyboardAppearance="dark"
-            errorStyle={styles.errorInputStyle}
-            autoCorrect={false}
-            blurOnSubmit={false}
-            placeholderTextColor="#7384B4"
-        />
-    );
-};

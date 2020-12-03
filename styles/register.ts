@@ -54,7 +54,6 @@ export const registerStyle = StyleSheet.create({
     },
     userTypeLabel: {
         color: 'yellow',
-        // fontFamily: 'UbuntuBold',
         fontSize: 11,
     },
     inputContainer: {

@@ -1,8 +1,10 @@
 import Axios from "axios";
-import { USER_LOGIN, USER_REGISTER } from "../../service/user.service";
+import { USER_LOGIN, USER_REGISTER, QUERY_ME } from "../../service/user.service";
 import { LoginInput, RegisterInput } from "../../types";
 
 export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
+export const ME = "ME";
 
 export const userRegister = async (input: RegisterInput, callback?: any) => {
     Axios.post(`${USER_REGISTER.url}`, input)
@@ -30,5 +32,33 @@ export const userLogin = (input: LoginInput) => {
             .catch(e => {
                 console.log(e)
             })
+    }
+}
+export const me = (token: string) => {
+    return async (dispatch: any) => {
+        Axios.get(`${QUERY_ME.url}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(res => {
+            if (res.data && res.data?.data) {
+                dispatch({
+                    type: ME,
+                    payload: res.data.data
+                })
+            }
+        })
+        .catch(e => {
+            console.log(e)
+        })
+    }
+}
+export const logout = (token: string) => {
+    return (dispatch: any) => {
+        dispatch({
+            type: LOGOUT,
+            payload: null
+        })
     }
 }

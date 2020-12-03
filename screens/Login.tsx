@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import {
-    Alert,
     LayoutAnimation,
-    TouchableOpacity,
-    Dimensions,
-    Image,
     UIManager,
     KeyboardAvoidingView,
-    StyleSheet,
     ScrollView,
     Text,
     View,
@@ -24,10 +19,9 @@ UIManager.setLayoutAnimationEnabledExperimental &&
 const USER_COOL = require('../assets/images/user-cool.png');
 const USER_STUDENT = require('../assets/images/user-student.png');
 const USER_HP = require('../assets/images/user-hp.png');
-
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const SCREEN_HEIGHT = Dimensions.get('window').height;
-
+import { connect } from 'react-redux';
+import { FormInput } from '../components/auth/FormInput';
+import { UserTypeItem } from '../components/auth/UserTypeItem';
 class Login extends Component<any, any> {
     emailInput: any;
     passwordInput: any;
@@ -62,7 +56,7 @@ class Login extends Component<any, any> {
                email: this.state.email,
                password: this.state.password
            }
-           userLogin(input)
+           this.props.userLogin(input)
         }
     }
 
@@ -90,7 +84,9 @@ class Login extends Component<any, any> {
 
     setSelectedType = (selectedType: any) =>
         LayoutAnimation.easeInEaseOut() || this.setState({ selectedType });
-
+    componentDidMount() {
+        console.log(this.props.user)
+    }
     render() {
         const {
             isLoading,
@@ -100,7 +96,7 @@ class Login extends Component<any, any> {
             password,
             passwordValid,
         } = this.state;
-
+    
         return (
             <ScrollView
                 keyboardShouldPersistTaps="handled"
@@ -111,7 +107,6 @@ class Login extends Component<any, any> {
                     contentContainerStyle={styles.formContainer}
                 >
                     <Text style={styles.signUpText}>Login</Text>
-                    {/* <Text style={styles.whoAreYouText}>WHO YOU ARE ?</Text> */}
                     <View style={styles.userTypesContainer}>
                         <UserTypeItem
                             label="PARENT"
@@ -165,7 +160,7 @@ class Login extends Component<any, any> {
                             }
                             onSubmitEditing={() => {
                                 this.validatePassword();
-                                this.confirmationPasswordInput.focus();
+                                this.login()
                             }}
                         />
                     </View>
@@ -202,51 +197,15 @@ class Login extends Component<any, any> {
         );
     }
 }
-export default Login;
-export const UserTypeItem = (props: any) => {
-    const { image, label, labelColor, selected, ...attributes } = props;
-    return (
-        <TouchableOpacity {...attributes}>
-            <View
-                style={[
-                    styles.userTypeItemContainer,
-                    selected && styles.userTypeItemContainerSelected,
-                ]}
-            >
-                <Text style={[styles.userTypeLabel, { color: labelColor }]}>
-                    {label}
-                </Text>
-                <Image
-                    source={image}
-                    style={[
-                        styles.userTypeMugshot,
-                        selected && styles.userTypeMugshotSelected,
-                    ]}
-                />
-            </View>
-        </TouchableOpacity>
-    );
-};
-
-export const FormInput = (props: any) => {
-    const { icon, refInput, ...otherProps } = props;
-    return (
-        <Input
-            {...otherProps}
-            ref={refInput}
-            inputContainerStyle={styles.inputContainer}
-            leftIcon={
-                <Icon name={icon} type={'simple-line-icon'} color="#7384B4" size={18} />
-            }
-            inputStyle={styles.inputStyle}
-            autoFocus={false}
-            autoCapitalize="none"
-            keyboardAppearance="dark"
-            errorStyle={styles.errorInputStyle}
-            autoCorrect={false}
-            blurOnSubmit={false}
-            placeholderTextColor="#7384B4"
-        />
-    );
-};
+const mapStateToProps = (state: any) => {
+    return {
+        user: state.user
+    }
+}
+const mapDispatchToProps = (dispatch: any) => {
+    return {
+        userLogin: (input: LoginInput) => dispatch(userLogin(input))
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Login));
 

@@ -10,3 +10,8 @@ export const USER_LOGIN: Api = {
     url: `${API_URL}/auth/login`,
     method: HTTP_METHOD.POST
 }
+
+export const QUERY_ME: Api ={
+    url: `${API_URL}/auth/me`,
+    method: HTTP_METHOD.GET
+}
