@@ -39,7 +39,7 @@ const Profile = (props: any) => {
                 position="bottomRight"
                 onPress={() => setShowFAB(!showFAB)}
               >
-                <Icon type="Entypo" name="dots-three-vertical" />
+                <Icon type="Entypo" name="dots-three-vertical"/>
                 <Button style={{ backgroundColor: '#3B5998' }} onPress={() => setShowFAB(false)}>
                   <Icon type="AntDesign" name="close" />
                 </Button>
