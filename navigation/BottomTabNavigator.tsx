@@ -5,6 +5,8 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import GrammarDetail from '../screens/grammars/GrammarDetail';
+import ListLessons from '../screens/grammars/ListLessons';
 import Home from '../screens/Home';
 import Login from '../screens/Login';
 import Profile from '../screens/Profile';
@@ -91,20 +93,24 @@ export function TabStackNavigator() {
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
       />
+      <TabStack.Screen
+        name="GrammarLessons"
+        component={ListLessons}
+        options={{
+          headerTitle: 'Ngữ pháp',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="GrammarDetail"
+        component={GrammarDetail}
+        options={{
+          headerTitle: 'Học Ngữ Pháp',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
     </TabStack.Navigator>
   )
-}
-
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
-
-function TabTwoNavigator() {
-  return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
-      />
-    </TabTwoStack.Navigator>
-  );
 }
