@@ -90,7 +90,7 @@ export default class Register extends Component<any, any> {
             userRegister(input)
             .then(res => {
                 if (res !== null) {
-                    this.props.navigator.navigate("Login")
+                    this.props.navigation.navigate("Login")
                 }
             })
             .catch(e => {

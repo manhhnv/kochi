@@ -52,13 +52,15 @@ const styles = StyleSheet.create({
         paddingBottom: 0.015 * height,
     },
     itemContainer: {
+        
     },
     active: {
-        backgroundColor: '#00CE9F',
+        backgroundColor: '#7ea04d',
         color: 'white',
         fontWeight: 'bold',
         borderRadius: 10,
-        marginRight: 0.03 * width
+        marginRight: 0.02 * width,
+        paddingLeft: 3.8
     }
 })
 export default ListLessons;

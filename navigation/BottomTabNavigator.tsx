@@ -78,7 +78,7 @@ export function TabStackNavigator() {
         component={TabTwoScreen}
         options={{
           headerTitle: 'Từ vựng',
-          headerStyle: { backgroundColor: "#00CE9F" },
+          headerStyle: { backgroundColor: "#7ea04d" },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
           headerBackTitleStyle: {color: 'white'},
           headerBackTitle: 'Home'
@@ -89,7 +89,7 @@ export function TabStackNavigator() {
         component={Vocabularies}
         options={{
           headerTitle: 'Bài học',
-          headerStyle: { backgroundColor: "#00CE9F", },
+          headerStyle: { backgroundColor: "#7ea04d", },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
       />
@@ -98,7 +98,7 @@ export function TabStackNavigator() {
         component={ListLessons}
         options={{
           headerTitle: 'Ngữ pháp',
-          headerStyle: { backgroundColor: "#00CE9F", },
+          headerStyle: { backgroundColor: "#7ea04d", },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
       />
@@ -107,7 +107,7 @@ export function TabStackNavigator() {
         component={GrammarDetail}
         options={{
           headerTitle: 'Học Ngữ Pháp',
-          headerStyle: { backgroundColor: "#00CE9F", },
+          headerStyle: { backgroundColor: "#7ea04d", },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
       />
