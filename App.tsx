@@ -12,7 +12,7 @@ import { resolverReload } from './redux/actions/reloadAction';
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
-  store.dispatch(resolverReload())
+  // store.dispatch(resolverReload())
   if (!isLoadingComplete) {
     return null;
   } else {

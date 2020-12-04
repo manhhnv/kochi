@@ -10,6 +10,7 @@ import ListLessons from '../screens/grammars/ListLessons';
 import Home from '../screens/Home';
 import Login from '../screens/Login';
 import Profile from '../screens/Profile';
+import ReadingLessons from '../screens/reading/ReadingLessons';
 import Register from '../screens/Register';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import Vocabularies from '../screens/Vocabularies';
@@ -107,6 +108,15 @@ export function TabStackNavigator() {
         component={GrammarDetail}
         options={{
           headerTitle: 'Học Ngữ Pháp',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="ReadingLessons"
+        component={ReadingLessons}
+        options={{
+          headerTitle: 'Đọc hiểu N3',
           headerStyle: { backgroundColor: "#00CE9F", },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
