@@ -11,11 +11,15 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import ProgressCircle from 'react-native-progress-circle'
 import { HomeStyles } from '../styles/index';
 import { API_URL } from '../env';
+import { me } from '../redux/actions/userAction';
+import { connect } from 'react-redux';
 const {width, height} = Dimensions.get('screen');
-const Home = ({navigation}: any) => {
+const Home = ({navigation, user, me}: any) => {
   const [showFAB, setShowFAB] = useState(false)
   const [segmentIndex, setSegmentIndex] = useState(1);
-  console.log(API_URL)
+  useEffect(() => {
+    me(user.token)
+  }, [])
   const _renderComponentBySegment = () => {
     if (segmentIndex == 1) {
       return (
@@ -308,4 +312,14 @@ const Home = ({navigation}: any) => {
     </Container>
   );
 }
-export default React.memo(Home)
+const mapStateToProps = (state: any) => {
+  return {
+    user: state.user
+  }
+}
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    me: (token: string) => dispatch(me(token))
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Home))
