@@ -35,6 +35,8 @@ export type TabTwoParamList = {
   TabTwoScreen: undefined;
 };
 export type TabStackParamList = {
+  VocabularyLession:undefined,
+  VocabularyTopic:undefined,
   HomeApp: undefined;
   VocabularyOverview: undefined;
   Lesson: undefined;
