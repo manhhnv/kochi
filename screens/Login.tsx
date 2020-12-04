@@ -13,6 +13,9 @@ import { userLogin } from '../redux/actions/userAction';
 
 import { LinearGradient } from 'react-native-linear-gradient';
 import { LoginInput } from '../types';
+// import { GoogleSignin, GoogleSigninButton } from '@react-native-community/google-signin';
+// GoogleSignin.configure();
+
 UIManager.setLayoutAnimationEnabledExperimental &&
     UIManager.setLayoutAnimationEnabledExperimental(true);
 
@@ -194,6 +197,11 @@ class Login extends Component<any, any> {
                                 useForeground
                                 onPress={() => this.props.navigation.navigate('Register')}
                             />
+                            {/* <GoogleSigninButton
+                            style={{ width: 192, height: 48 }}
+                            size={GoogleSigninButton.Size.Wide}
+                            color={GoogleSigninButton.Color.Dark}
+                            ></GoogleSigninButton> */}
                         </View>
                     </ScrollView>
                 )}

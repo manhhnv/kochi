@@ -58,7 +58,13 @@ export const me = (token: string) => {
     }
 }
 export const logout = (token: string) => {
-    return (dispatch: any) => {
+    return async (dispatch: any) => {
+        try {
+            await AsyncStorage.removeItem('token')
+        }
+        catch(e) {
+            console.log(e)
+        }
         dispatch({
             type: LOGOUT,
             payload: null
