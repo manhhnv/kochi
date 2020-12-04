@@ -7,6 +7,7 @@ const GrammarDetail = (
     }: any
 ) => {
     const { grammarId } = route.params;
+    console.log(route.params)
     return(
         <Text>
             {grammarId}
