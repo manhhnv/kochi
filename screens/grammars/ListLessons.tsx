@@ -42,8 +42,8 @@ const ListLessons = ({ navigation }: any) => {
 }
 const styles = StyleSheet.create({
     container: {
-        paddingBottom: 20,
-        paddingTop: 20
+        paddingBottom: 0.03 * width,
+        paddingTop: 0.03 * width
     },
     grammarForm: {
         fontSize: 19,
@@ -52,13 +52,15 @@ const styles = StyleSheet.create({
         paddingBottom: 0.015 * height,
     },
     itemContainer: {
+        
     },
     active: {
         backgroundColor: '#00CE9F',
         color: 'white',
         fontWeight: 'bold',
         borderRadius: 10,
-        marginRight: 0.03 * width
+        marginRight: 0.02 * width,
+        paddingLeft: 0.01 * width
     }
 })
 export default ListLessons;
