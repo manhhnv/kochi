@@ -11,6 +11,7 @@ import Home from '../screens/Home';
 import Login from '../screens/Login';
 import Profile from '../screens/Profile';
 import ReadingCategory from '../screens/reading/ReadingCategory';
+import ReadingDetail from '../screens/reading/ReadingDetail';
 import ReadingLessons from '../screens/reading/ReadingLessons';
 import Register from '../screens/Register';
 import TabTwoScreen from '../screens/TabTwoScreen';
@@ -126,7 +127,16 @@ export function TabStackNavigator() {
         name="ReadingLessons"
         component={ReadingLessons}
         options={{
-          headerTitle: 'Luyện tập đọc hiểu',
+          headerTitle: 'Bài học',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="ReadingDetail"
+        component={ReadingDetail}
+        options={{
+          headerTitle: 'Luyện tập',
           headerStyle: { backgroundColor: "#00CE9F", },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
