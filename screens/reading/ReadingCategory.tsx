@@ -15,7 +15,7 @@ const ReadingCategory = ({navigation}: any) => {
         >
             <ScrollView>
                 <TouchableOpacity onPress={() => navigation.navigate("ReadingLessons", {readingCategory: 1})}>
-                    <Animatable.View animation="bounceInLeft" style={styles.readingCategory} duration={1000} >
+                    <Animatable.View animation="bounceInLeft" style={styles.readingCategory} duration={700} >
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/logo.png')} />
                             <View>

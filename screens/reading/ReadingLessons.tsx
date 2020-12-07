@@ -31,8 +31,16 @@ const ReadingLessons = ({ navigation, route, user, getAllReadingLessons, reading
             {loading == false && lessons != null && lessons.length > 0? (
                 <ScrollView>
                     {lessons.map((lesson: any, i: number) => (
-                        <TouchableOpacity key={i} onPress={() => navigation.navigate("ReadingDetail", {lesson: lesson})}>
-                            <Animatable.View animation="bounceInLeft" duration={1000} style={styles.readingCategory}>
+                        <TouchableOpacity
+                            key={i}
+                            onPress={
+                                () => navigation.navigate("ReadingDetail", {
+                                    readingCategory: readingCategory,
+                                    lessonId: lesson.id
+                                })
+                            }
+                        >
+                            <Animatable.View animation="bounceInLeft" duration={700} style={styles.readingCategory}>
                                 <Content contentContainerStyle={styles.titleContainer}>
                                     <Thumbnail source={require('../../assets/images/history/dokkai.jpg')} />
                                     <View>
