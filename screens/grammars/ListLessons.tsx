@@ -1,7 +1,8 @@
-import { Container, Text, View, Header, Content, List, ListItem, Left, Right, Icon } from 'native-base';
+import { Container, Text, View, Header, Content, List, ListItem, Left, Right, Icon, Thumbnail } from 'native-base';
 import React, { useState } from 'react';
 import { Alert, Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
 import { grammarLesson } from '../../data/grammarLesson';
+import * as Animatable from 'react-native-animatable';
 const lessons = grammarLesson();
 const { width, height } = Dimensions.get('window');
 const ListLessons = ({ navigation }: any) => {
@@ -24,14 +25,21 @@ const ListLessons = ({ navigation }: any) => {
                                 onPress={() => grammarDetailHandle(l.id)}
                                 style={activeGrammar == l.id ? styles.active : null}
                             >
-                                <Left>
-                                    <Text style={[styles.grammarForm, activeGrammar == l.id ? styles.active : null]}>
-                                        {l.id + ' .'} {l.form}
-                                    </Text>
-                                </Left>
-                                <Right>
-                                    <Icon type="AntDesign" name="right" style={activeGrammar == l.id ? styles.active : null} />
-                                </Right>
+                                
+                                    <Left>
+                                        <Animatable.View animation="bounceInRight" >
+                                            <Text style={[styles.grammarForm, activeGrammar == l.id ? styles.active : null]}>
+                                                {l.id + ' .'} {l.form}
+                                            </Text>
+                                            </Animatable.View>
+                                    </Left>
+                                    <Right>
+                                        <Animatable.View animation="bounceInRight" >
+                                            {activeGrammar === l.id ? <Thumbnail source= {activeGrammar === l.id ? require('../../assets/images/user-hp.png') : null}  /> 
+                                            : <Icon type="AntDesign" name="right" style={activeGrammar == l.id ? styles.active : null} />}
+                                        </Animatable.View>
+                                    </Right>
+                                
                             </ListItem>
                         </TouchableOpacity>
                     ))}
