@@ -5,7 +5,7 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
             lessons: [
                 {
                     id: 1,
-                    title: "正解の自然",
+                    title: "正解の自然ーショート",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -32,8 +32,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 2,
+                    title: "正解の自然ーショート",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -60,8 +60,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 3,
+                    title: "正解の自然ーショート",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -88,8 +88,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 4,
+                    title: "正解の自然ーショート",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -116,8 +116,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 5,
+                    title: "正解の自然ーショート",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -144,8 +144,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 6,
+                    title: "正解の自然ーショート",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -172,8 +172,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 7,
+                    title: "正解の自然ーショート",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -205,8 +205,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
             readingCategory : 2,
             lessons: [
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 8,
+                    title: "正解の自然ーなみ",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -233,8 +233,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 9,
+                    title: "正解の自然ーなみ",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -261,8 +261,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 10,
+                    title: "正解の自然ーなみ",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -289,8 +289,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 11,
+                    title: "正解の自然ーなみ",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -317,8 +317,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 12,
+                    title: "正解の自然ーなみ",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -345,8 +345,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 13,
+                    title: "正解の自然ーなみ",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -373,8 +373,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 14,
+                    title: "正解の自然ーなみ",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -406,8 +406,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
             readingCategory : 3,
             lessons: [
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 15,
+                    title: "正解の自然ー長い",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -434,8 +434,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 16,
+                    title: "正解の自然ー長い",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -462,8 +462,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 17,
+                    title: "正解の自然ー長い",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -490,8 +490,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 18,
+                    title: "正解の自然ー長い",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -518,8 +518,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 19,
+                    title: "正解の自然ー長い",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -546,8 +546,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 20,
+                    title: "正解の自然ー長い",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -574,8 +574,8 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                     ]
                 },
                 {
-                    id: 1,
-                    title: "正解の自然",
+                    id: 21,
+                    title: "正解の自然ー長い",
                     paragraph: "生物にはふしぎな力がある。例えば、植物は生きる力がとても強い。" +
                                 "切り取った茎を土にさしておくだけで、あっという間に元の大きさに成長することもあるほどだ。" +
                                 "動物にも似たことが起こる。トカゲのしっぽやかにのはさみは、なくなると新しく生えてくる。"+
@@ -604,11 +604,6 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
             ]
         }
     ]
-    const response = data.map((category) => {
-        if (category.readingCategory == readingCategory) {
-            return category.lessons;
-        }
-    })
     for (let i: number = 0; i < data.length; i++) {
         if (data[i].readingCategory == readingCategory) {
             if (callback) {

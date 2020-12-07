@@ -3,28 +3,44 @@ import React, { useEffect, useState } from 'react'
 import { Dimensions, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { getReadingByCategory } from '../../data/getReadingByCategory'
 import * as Animatable from 'react-native-animatable';
+import { getAllReadingLessons } from '../../redux/actions/readingAction';
+import { connect } from 'react-redux';
 const { width, height } = Dimensions.get('screen');
 
 
-const ReadingLessons = ({ navigation, route }: any) => {
+const ReadingLessons = ({ navigation, route, user, getAllReadingLessons, reading }: any) => {
     const { readingCategory } = route.params;
     const [loading, setLoading] = useState(true);
     const [lessons, setLessons]: any = useState(null);
     useEffect(() => {
-        const timer = setTimeout(() => {
-            const data = getReadingByCategory(readingCategory, () => { setLoading(false) });
-            setLessons(data);
-            console.log("DATA", data)
-        }, 2000)
-        return () => clearTimeout(timer)
-    }, [])
+        getAllReadingLessons(user?.token, readingCategory, () => {
+            if (readingCategory == 1) {
+                setLessons(reading.short)
+            }
+            else if (readingCategory == 2) {
+                setLessons(reading.medium)
+            }
+            else if (readingCategory == 3) {
+                setLessons(reading.long)
+            }
+            setLoading(false);
+        })
+    }, [readingCategory])
     return (
         <React.Fragment>
             {loading == false && lessons != null && lessons.length > 0? (
                 <ScrollView>
                     {lessons.map((lesson: any, i: number) => (
-                        <TouchableOpacity key={i}>
-                            <Animatable.View animation="bounceInLeft" duration={1000} style={styles.readingCategory}>
+                        <TouchableOpacity
+                            key={i}
+                            onPress={
+                                () => navigation.navigate("ReadingDetail", {
+                                    readingCategory: readingCategory,
+                                    lessonId: lesson.id
+                                })
+                            }
+                        >
+                            <Animatable.View animation="bounceInLeft" duration={700} style={styles.readingCategory}>
                                 <Content contentContainerStyle={styles.titleContainer}>
                                     <Thumbnail source={require('../../assets/images/history/dokkai.jpg')} />
                                     <View>
@@ -74,4 +90,17 @@ const styles = StyleSheet.create({
         marginLeft: 0.05 * width,
     }
 });
-export default ReadingLessons
+const mapStateToProps = (state: any) => {
+    return {
+        user: state.user,
+        reading: state.reading,
+    }
+}
+const mapDispatchToProps = (dispatch: any) => {
+    return {
+        getAllReadingLessons: (
+            token: string, readingCategory: number, callback?: any
+            ) => dispatch(getAllReadingLessons(token, readingCategory, callback))
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(React.memo(ReadingLessons))
