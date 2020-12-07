@@ -36,7 +36,8 @@ const ReadingLessons = ({ navigation, route, user, getAllReadingLessons, reading
                             onPress={
                                 () => navigation.navigate("ReadingDetail", {
                                     readingCategory: readingCategory,
-                                    lessonId: lesson.id
+                                    lessonId: lesson.id,
+                                    currentIndex: i
                                 })
                             }
                         >

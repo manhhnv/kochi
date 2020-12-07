@@ -12,112 +12,145 @@ import { Dimensions, Image, ScrollView, StyleSheet } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { connect } from 'react-redux';
 const { width, height } = Dimensions.get('screen');
+var length: number;
+var nextLessonId: number;
 const ReadingDetail = ({ route, navigation, reading }: any) => {
-    const { lessonId, readingCategory } = route.params;
+    const { lessonId, readingCategory, currentIndex } = route.params;
     const [userAnswer, setUserAnswer]: any = useState(null);
     const [resultCheck, setResultCheck]: any = useState(false);
     const scrollRef: any = useRef();
-    const showResultCheck = () => {
+    const showResultCheck = (answerId: any) => {
+        if (lesson !== null) {
+            if (lesson.correct.id == answerId) {
+                console.log("TRUE")
+            }
+            else {
+                console.log("FALSE")
+            }
+        }
         scrollRef.current.scrollTo({ x: 0, y: 0, animated: true })
         setResultCheck(true);
     }
     const [lesson, setLesson]: any = useState(null);
     useEffect(() => {
         if (reading) {
-            let length: number;
             if (readingCategory == 1) {
                 length = reading.short.length;
-                for (let i: number = 0; i < length; i++) {
-                    if (reading.short[i].id == lessonId) {
-                        setLesson(reading.short[i])
-                        break;
-                    }
+                if (currentIndex < length) {
+                    setLesson(reading.short[currentIndex])
+                }
+                if (currentIndex + 1 < length) {
+                    nextLessonId = reading.short[currentIndex+1].id
                 }
             }
             else if (readingCategory == 2) {
                 length = reading.medium.length;
-                for (let i: number = 0; i < length; i++) {
-                    if (reading.medium[i].id == lessonId) {
-                        setLesson(reading.medium[i])
-                        break;
-                    }
+                if (currentIndex < length) {
+                    setLesson(reading.medium[currentIndex])
+                }
+                if (currentIndex + 1 < length) {
+                    nextLessonId = reading.medium[currentIndex+1].id
                 }
             }
             else if (readingCategory == 3) {
                 length = reading.long.length;
-                for (let i: number = 0; i < length; i++) {
-                    if (reading.long[i].id == lessonId) {
-                        setLesson(reading.long[i])
-                        break;
-                    }
+                if (currentIndex < length) {
+                    setLesson(reading.long[currentIndex])
+                }
+                if (currentIndex + 1 < length) {
+                    nextLessonId = reading.long[currentIndex+1].id
                 }
             }
         }
-    }, [lessonId, readingCategory])
+    }, [currentIndex, readingCategory, lessonId])
     return (
         <React.Fragment>
             {lesson !== null ? (
                 <ScrollView ref={scrollRef} style={{ backgroundColor: "white" }} scrollEnabled={!resultCheck}>
-                <Animatable.View animation="fadeIn" style={styles.container} duration={1000}>
-                    <Text style={styles.lessonTitle}>
-                        {lesson.title}
-                    </Text>
-                    <View style={{ borderWidth: 3, margin: 5 }}>
-                        <Text style={[styles.lessonDetail]}>
-                            {lesson.paragraph}
+                    <Animatable.View animation="fadeIn" style={styles.container} duration={1000}>
+                        <Text style={styles.indexStyle}>問題：{currentIndex + 1 }</Text>
+                        <Text style={styles.lessonTitle}>
+                            {lesson.title}
                         </Text>
-                        <Image source={require('../../assets/images/illustration.jpg')} style={{ resizeMode: "cover", maxWidth: 0.956 * width, height: 0.3 * height }} />
-                    </View>
-                    <Text style={styles.lessonDetail}>
-                        <Text style={[{ fontWeight: "bold", color: 'red' }, styles.lessonDetail]}>
-                            問題：
-                    </Text>
-                        {lesson.question}
-                    </Text>
-                    {lesson.answers.map((answer: any, i: number) => (
-                        <View key={i} style={styles.answerRadio}>
-                            <Radio color="gray" selected={userAnswer === i + 1} selectedColor="green" onPress={() => setUserAnswer(answer.id)} />
-                            <Text style={{ fontSize: 20 }}>{answer.text}</Text>
+                        <View style={{ borderWidth: 3, margin: 5 }}>
+                            <Text style={[styles.lessonDetail]}>
+                                {lesson.paragraph}
+                            </Text>
+                            <Image source={require('../../assets/images/illustration.jpg')} style={{ resizeMode: "cover", maxWidth: 0.956 * width, height: 0.3 * height }} />
                         </View>
-                    ))}
-                    <Grid>
-                        <Root>
-                            <Row style={{ marginTop: 0.1 * width, marginLeft: 0.17 * width, marginBottom: 0.18 * width }}>
-                                <Col>
-                                    <Button success onPress={showResultCheck} disabled={userAnswer !== null ? false : true}>
-                                        <Text
-                                        >
-                                            Đáp án
-                                </Text>
-                                    </Button>
-                                </Col>
-                                <Col>
-                                    <Button primary>
-                                        <Text>Tiếp theo</Text>
-                                    </Button>
-                                </Col>
-                            </Row>
-                        </Root>
-                    </Grid>
-                    {resultCheck == true ? (
-                        <View style={styles.result}>
-                            <Button iconLeft danger onPress={() => setResultCheck(false)}>
-                                <Icon name='close' />
-                                <Text></Text>
-                            </Button>
-                        </View>
-                    ) : null}
-                </Animatable.View>
-            </ScrollView>
-            ): (
-                <Spinner/>
-            )}
+                        <Text style={styles.lessonDetail}>
+                            <Text style={[{ fontWeight: "bold", color: 'red' }, styles.lessonDetail]}>
+                                問題：
+                    </Text>
+                            {lesson.question}
+                        </Text>
+                        {lesson.answers.map((answer: any, i: number) => (
+                            <View key={i} style={styles.answerRadio}>
+                                <Radio color="gray" selected={userAnswer === i + 1} selectedColor="green" onPress={() => setUserAnswer(answer.id)} />
+                                <Text style={{ fontSize: 20 }}>{answer.text}</Text>
+                            </View>
+                        ))}
+                        <Grid>
+                            <Root>
+                                <Row style={{ marginTop: 0.1 * width, marginLeft: 0.17 * width, marginBottom: 0.18 * width }}>
+                                    <Col>
+                                        <Button success onPress={() => showResultCheck(userAnswer)} disabled={userAnswer !== null ? false : true}>
+                                            <Text
+                                            >
+                                                Đáp án
+                                            </Text>
+                                        </Button>
+                                    </Col>
+                                    <Col>
+                                        {currentIndex + 1 < length ? (
+                                            <Button
+                                                primary
+                                                onPress={() => {
+                                                    navigation.navigate("ReadingDetail", {
+                                                        readingCategory: readingCategory,
+                                                        lessonId: nextLessonId,
+                                                        currentIndex: currentIndex + 1
+                                                    });
+                                                    scrollRef.current.scrollTo({ x: 0, y: 0, animated: true });
+                                                }}
+                                            >
+                                                <Text>Tiếp theo</Text>
+                                            </Button>
+                                        ) : (
+                                                <Button
+                                                    danger
+                                                    onPress={() => navigation.navigate("ReadingCategory")}
+                                                >
+                                                    <Text>Quay về</Text>
+                                                </Button>
+                                            )}
+                                    </Col>
+                                </Row>
+                            </Root>
+                        </Grid>
+                        {resultCheck == true ? (
+                            <View style={styles.result}>
+                                <Button iconLeft danger onPress={() => setResultCheck(false)}>
+                                    <Icon name='close' />
+                                </Button>
+                                <Text>答え</Text>
+                            </View>
+                        ) : null}
+                    </Animatable.View>
+                </ScrollView>
+            ) : (
+                    <Spinner />
+                )}
         </React.Fragment>
     )
 }
 const styles = StyleSheet.create({
+    indexStyle: {
+        fontWeight: "bold",
+        fontSize: 20,
+    },
     container: {
-        marginTop: 30,
+        marginTop: 0,
     },
     lessonTitle: {
         fontWeight: "bold",
@@ -143,7 +176,7 @@ const styles = StyleSheet.create({
         top: 0.1 * height,
         margin: 15,
         borderRadius: 15,
-        width: 0.92 * width
+        width: 0.92 * width,
     }
 })
 const mapStateToProps = (state: any) => {
