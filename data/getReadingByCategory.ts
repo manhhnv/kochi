@@ -29,7 +29,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 1,
+                        text: "植物がとても早く成長できること。"
+                    }
                 },
                 {
                     id: 2,
@@ -57,7 +61,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 2,
+                        text: "動物にも植物と同じ力があること。"
+                    }
                 },
                 {
                     id: 3,
@@ -85,7 +93,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 3,
+                        text: "なくなった体の一部が元に戻ること。"
+                    }
                 },
                 {
                     id: 4,
@@ -113,7 +125,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 5,
@@ -141,7 +157,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 6,
@@ -169,7 +189,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 7,
@@ -197,7 +221,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 }
             ]
         },
@@ -230,7 +258,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 9,
@@ -258,7 +290,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 10,
@@ -286,7 +322,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 11,
@@ -314,7 +354,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 12,
@@ -342,7 +386,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 13,
@@ -370,7 +418,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 14,
@@ -398,7 +450,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 }
             ]
         },
@@ -431,7 +487,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 16,
@@ -459,7 +519,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 17,
@@ -487,7 +551,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 18,
@@ -515,7 +583,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 19,
@@ -543,7 +615,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 20,
@@ -571,7 +647,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 },
                 {
                     id: 21,
@@ -599,7 +679,11 @@ export const getReadingByCategory = (readingCategory: number, callback?: any) =>
                             id: 4,
                             text: "人間にない力を植物が持っていること。"
                         }
-                    ]
+                    ],
+                    correct: {
+                        id: 4,
+                        text: "人間にない力を植物が持っていること。"
+                    }
                 }
             ]
         }

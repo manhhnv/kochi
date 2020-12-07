@@ -19,7 +19,15 @@ const ReadingDetail = ({ route, navigation, reading }: any) => {
     const [userAnswer, setUserAnswer]: any = useState(null);
     const [resultCheck, setResultCheck]: any = useState(false);
     const scrollRef: any = useRef();
-    const showResultCheck = () => {
+    const showResultCheck = (answerId: any) => {
+        if (lesson !== null) {
+            if (lesson.correct.id == answerId) {
+                console.log("TRUE")
+            }
+            else {
+                console.log("FALSE")
+            }
+        }
         scrollRef.current.scrollTo({ x: 0, y: 0, animated: true })
         setResultCheck(true);
     }
@@ -86,7 +94,7 @@ const ReadingDetail = ({ route, navigation, reading }: any) => {
                             <Root>
                                 <Row style={{ marginTop: 0.1 * width, marginLeft: 0.17 * width, marginBottom: 0.18 * width }}>
                                     <Col>
-                                        <Button success onPress={showResultCheck} disabled={userAnswer !== null ? false : true}>
+                                        <Button success onPress={() => showResultCheck(userAnswer)} disabled={userAnswer !== null ? false : true}>
                                             <Text
                                             >
                                                 Đáp án
@@ -124,8 +132,8 @@ const ReadingDetail = ({ route, navigation, reading }: any) => {
                             <View style={styles.result}>
                                 <Button iconLeft danger onPress={() => setResultCheck(false)}>
                                     <Icon name='close' />
-                                    <Text></Text>
                                 </Button>
+                                <Text>答え</Text>
                             </View>
                         ) : null}
                     </Animatable.View>
@@ -142,7 +150,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     container: {
-        marginTop: 20,
+        marginTop: 0,
     },
     lessonTitle: {
         fontWeight: "bold",
@@ -168,7 +176,7 @@ const styles = StyleSheet.create({
         top: 0.1 * height,
         margin: 15,
         borderRadius: 15,
-        width: 0.92 * width
+        width: 0.92 * width,
     }
 })
 const mapStateToProps = (state: any) => {
