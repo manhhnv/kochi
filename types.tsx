@@ -44,6 +44,7 @@ export type TabStackParamList = {
   GrammarLessons: undefined;
   GrammarDetail: undefined;
   ReadingCategory: undefined;
+  ReadingLessons: undefined;
 }
 export type CourseOverviewType = {
   totalUnits: number;

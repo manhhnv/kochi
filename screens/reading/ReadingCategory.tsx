@@ -1,9 +1,9 @@
 import { Content, Text, Thumbnail, View } from 'native-base';
 import React, { useEffect } from 'react';
-import { Animated, Dimensions, ImageBackground, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { Alert, Animated, Dimensions, ImageBackground, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 const { width, height } = Dimensions.get('screen');
-const ReadingCategory = () => {
+const ReadingCategory = ({navigation}: any) => {
 
     return (
         <ImageBackground
@@ -14,8 +14,8 @@ const ReadingCategory = () => {
             }}
         >
             <ScrollView>
-                <TouchableOpacity>
-                    <Animatable.View animation="bounceInLeft" style={styles.readingCategory} duration={1000}>
+                <TouchableOpacity onPress={() => navigation.navigate("ReadingLessons", {readingCategory: 1})}>
+                    <Animatable.View animation="bounceInLeft" style={styles.readingCategory} duration={1000} >
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/logo.png')} />
                             <View>
@@ -24,7 +24,7 @@ const ReadingCategory = () => {
                         </Content>
                     </Animatable.View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate("ReadingLessons", {readingCategory: 2})}>
                     <Animatable.View animation="bounceInRight" style={styles.readingCategory}>
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/logo.png')} />
@@ -34,7 +34,7 @@ const ReadingCategory = () => {
                         </Content>
                     </Animatable.View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate("ReadingLessons", {readingCategory: 3})}>
                     <Animatable.View animation="bounceInLeft" style={styles.readingCategory}>
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/logo.png')} />
