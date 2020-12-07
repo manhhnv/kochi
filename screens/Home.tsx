@@ -187,7 +187,7 @@ const Home = ({navigation, user, me}: any) => {
               </Row>
               <Row>
                 <Col style={{ backgroundColor: '#fff', margin: 10 }}>
-                  <TouchableOpacity onPress={() => navigation.navigate("ReadingLessons")}>
+                  <TouchableOpacity onPress={() => navigation.navigate("ReadingCategory")}>
                     <Card style={HomeStyles.cardStyle}>
                       <CardItem>
                         <Left style={{ borderWidth: 0 }}>
