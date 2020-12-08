@@ -14,7 +14,7 @@ export default function TabTwoScreen({navigation}: any) {
   return (
     <Container >
       <Content>
-        <ImageBackground source={require('../assets/images/background.jpg')} style={{ width: Dimensions.get('screen').width }}>
+        <ImageBackground source={require('../assets/images/background2.jpg')} style={{ width: Dimensions.get('screen').width, height: Dimensions.get('screen').height }}>
         <CourseOverview totalUnits={6} thumbnail={thumbnail}></CourseOverview>
           <List>
             <TouchableOpacity onPress={() => navigation.navigate("Lesson", {lessonId: 1})}>

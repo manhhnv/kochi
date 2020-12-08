@@ -127,7 +127,7 @@ const Home = ({navigation}: any) => {
               <Text style={HomeStyles.category}>Danh mục</Text>
               <Row>
                 <Col style={{ backgroundColor: '#fff', margin: 10 }}>
-                  <TouchableOpacity onPress={() => {navigation.navigate("VocabularyTopic"); window.alert("Tính năng đang được phát triển...")}}>
+                  <TouchableOpacity onPress={() => {navigation.navigate("VocabularyTopic"); }}>
                     <Card style={HomeStyles.cardStyle}>
                       <CardItem>
                         <Left style={{ borderWidth: 0 }}>
@@ -154,7 +154,7 @@ const Home = ({navigation}: any) => {
                   </TouchableOpacity>
                 </Col>
                 <Col style={{ backgroundColor: '#fff', margin: 10 }}>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => navigation.navigate("GrammarLessons")}>
                     <Card style={HomeStyles.cardStyle}>
                       <CardItem>
                         <Left style={{ borderWidth: 0 }}>
@@ -183,7 +183,7 @@ const Home = ({navigation}: any) => {
               </Row>
               <Row>
                 <Col style={{ backgroundColor: '#fff', margin: 10 }}>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => navigation.navigate("ReadingCategory")}>
                     <Card style={HomeStyles.cardStyle}>
                       <CardItem>
                         <Left style={{ borderWidth: 0 }}>

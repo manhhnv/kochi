@@ -35,6 +35,7 @@ export type TabTwoParamList = {
   TabTwoScreen: undefined;
 };
 export type TabStackParamList = {
+  VocabularyList:undefined,
   VocabularyLession:undefined,
   VocabularyTopic:undefined,
   HomeApp: undefined;
@@ -42,6 +43,14 @@ export type TabStackParamList = {
   Lesson: undefined;
   Register: undefined;
   Login: undefined;
+  Overview: undefined;
+  GrammarLessons: undefined;
+  GrammarDetail: undefined;
+  ReadingCategory: undefined;
+  ReadingLessons: undefined;
+  ReadingDetail: undefined;
+  ReadingStartTesting: undefined;
+  NotificationScreen: undefined;
 }
 export type CourseOverviewType = {
   totalUnits: number;

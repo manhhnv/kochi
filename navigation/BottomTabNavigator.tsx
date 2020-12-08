@@ -5,14 +5,22 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import NotificationScreen from '../screens/extensions/NotificationScreen';
+import GrammarDetail from '../screens/grammars/GrammarDetail';
+import ListLessons from '../screens/grammars/ListLessons';
 import Home from '../screens/Home';
 import Login from '../screens/Login';
 import Profile from '../screens/Profile';
+import ReadingCategory from '../screens/reading/ReadingCategory';
+import ReadingDetail from '../screens/reading/ReadingDetail';
+import ReadingLessons from '../screens/reading/ReadingLessons';
+import ReadingStartTesting from '../screens/reading/ReadingStartTesting';
 import Register from '../screens/Register';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import Vocabularies from '../screens/Vocabularies';
-import VocabularyTopic from "../screens/Vocabularies/VocabularyTopic";
-import VocabularyLession from "../screens/Vocabularies/VocabularyLession";
+import VocabularyTopic from "../screens/vocabularies/VocabularyTopic";
+import VocabularyLession from "../screens/vocabularies/VocabularyLession";
+import VocabularyList from "../screens/vocabularies/VocabularyList";
 import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabStackParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -88,7 +96,7 @@ export function TabStackNavigator() {
         name="VocabularyTopic"
         component={VocabularyTopic}
         options={{
-          headerTitle: 'Chủ đề từ vựng',
+          headerTitle: 'Từ vựng N3',
           headerStyle: { backgroundColor: "#00CE9F" },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
           headerBackTitleStyle: {color: 'white'},
@@ -108,27 +116,78 @@ export function TabStackNavigator() {
         name="VocabularyLession"
         component={VocabularyLession}
         options={{
-          headerTitle: 'Bài học',
+          headerTitle: 'Chủ đề từ vựng',
           headerStyle: { backgroundColor: "#00CE9F" },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
           headerBackTitleStyle: {color: 'white'},
-          headerBackTitle: 'Home'
+          headerBackTitle: 'Home' 
+        }}
+        />
+       <TabStack.Screen
+        name="VocabularyList"
+        component={VocabularyList}
+        options={{
+          headerTitle: 'Danh sách từ vựng',
+          headerStyle: { backgroundColor: "#00CE9F" },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+          headerBackTitleStyle: {color: 'white'},
+          headerBackTitle: 'Home' 
+        }}
+        />
+      <TabStack.Screen
+        name="GrammarLessons"
+        component={ListLessons}
+        options={{
+          headerTitle: 'Ngữ pháp',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="GrammarDetail"
+        component={GrammarDetail}
+        options={{
+          headerTitle: 'Học Ngữ Pháp',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="ReadingCategory"
+        component={ReadingCategory}
+        options={{
+          headerTitle: 'Đọc hiểu N3',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="ReadingLessons"
+        component={ReadingLessons}
+        options={{
+          headerTitle: 'Bài học',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="ReadingDetail"
+        component={ReadingDetail}
+        options={{
+          headerTitle: 'Luyện tập',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="NotificationScreen"
+        component={NotificationScreen}
+        options={{
+          headerTitle: 'Bắt đầu',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
       />
     </TabStack.Navigator>
   )
-}
-
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
-
-function TabTwoNavigator() {
-  return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
-      />
-    </TabTwoStack.Navigator>
-  );
 }
