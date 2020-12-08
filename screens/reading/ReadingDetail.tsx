@@ -12,6 +12,8 @@ import { Dimensions, Image, ScrollView, StyleSheet } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { connect } from 'react-redux';
 const { width, height } = Dimensions.get('screen');
+const MARU_IMG = require('../../assets/images/maru.jpg');
+const BATSU_IMG = require('../../assets/images/batsu.jpg')
 var length: number;
 var nextLessonId: number;
 const ReadingDetail = ({ route, navigation, reading }: any) => {
@@ -19,13 +21,14 @@ const ReadingDetail = ({ route, navigation, reading }: any) => {
     const [userAnswer, setUserAnswer]: any = useState(null);
     const [resultCheck, setResultCheck]: any = useState(false);
     const scrollRef: any = useRef();
+    const [result, setResult] = useState(false);
     const showResultCheck = (answerId: any) => {
         if (lesson !== null) {
             if (lesson.correct.id == answerId) {
-                console.log("TRUE")
+                setResult(true)
             }
             else {
-                console.log("FALSE")
+                setResult(false)
             }
         }
         scrollRef.current.scrollTo({ x: 0, y: 0, animated: true })
@@ -40,7 +43,7 @@ const ReadingDetail = ({ route, navigation, reading }: any) => {
                     setLesson(reading.short[currentIndex])
                 }
                 if (currentIndex + 1 < length) {
-                    nextLessonId = reading.short[currentIndex+1].id
+                    nextLessonId = reading.short[currentIndex + 1].id
                 }
             }
             else if (readingCategory == 2) {
@@ -49,7 +52,7 @@ const ReadingDetail = ({ route, navigation, reading }: any) => {
                     setLesson(reading.medium[currentIndex])
                 }
                 if (currentIndex + 1 < length) {
-                    nextLessonId = reading.medium[currentIndex+1].id
+                    nextLessonId = reading.medium[currentIndex + 1].id
                 }
             }
             else if (readingCategory == 3) {
@@ -58,7 +61,7 @@ const ReadingDetail = ({ route, navigation, reading }: any) => {
                     setLesson(reading.long[currentIndex])
                 }
                 if (currentIndex + 1 < length) {
-                    nextLessonId = reading.long[currentIndex+1].id
+                    nextLessonId = reading.long[currentIndex + 1].id
                 }
             }
         }
@@ -68,7 +71,7 @@ const ReadingDetail = ({ route, navigation, reading }: any) => {
             {lesson !== null ? (
                 <ScrollView ref={scrollRef} style={{ backgroundColor: "white" }} scrollEnabled={!resultCheck}>
                     <Animatable.View animation="fadeIn" style={styles.container} duration={1000}>
-                        <Text style={styles.indexStyle}>問題：{currentIndex + 1 }</Text>
+                        <Text style={styles.indexStyle}>問題：{currentIndex + 1}</Text>
                         <Text style={styles.lessonTitle}>
                             {lesson.title}
                         </Text>
@@ -130,10 +133,21 @@ const ReadingDetail = ({ route, navigation, reading }: any) => {
                         </Grid>
                         {resultCheck == true ? (
                             <View style={styles.result}>
-                                <Button iconLeft danger onPress={() => setResultCheck(false)}>
+                                <Button iconLeft danger onPress={() => setResultCheck(false)} large style={{ width: 50 }}>
                                     <Icon name='close' />
                                 </Button>
-                                <Text>答え</Text>
+                                <Image source={result == true ? MARU_IMG : BATSU_IMG} style={styles.resultNotification} />
+                                {result == true ? (
+                                    <Text style={styles.feedback}>Đúng rồi nè 😁</Text>
+                                ): (
+                                    <React.Fragment>
+                                        <Text style={styles.feedback}>{" "} Sai rồi 😢</Text>
+                                        <Container style={{paddingTop: 10}}>
+                                            <Text style={styles.feedback}>Đáp án</Text>
+                                            <Text style={styles.feedback}>{lesson.correct.text}</Text>
+                                        </Container>
+                                    </React.Fragment>
+                                )}
                             </View>
                         ) : null}
                     </Animatable.View>
@@ -171,12 +185,33 @@ const styles = StyleSheet.create({
     },
     result: {
         height: 0.6 * height,
-        backgroundColor: 'green',
+        backgroundColor: 'white',
         position: "absolute",
         top: 0.1 * height,
         margin: 15,
         borderRadius: 15,
         width: 0.92 * width,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.34,
+        shadowRadius: 6.27,
+
+        elevation: 10,
+    },
+    resultNotification: {
+        alignItems: "center",
+        alignSelf: "center",
+        justifyContent: "center",
+        height: 0.2 * height,
+        width: 0.72 * width,
+        resizeMode: "contain"
+    },
+    feedback: {
+        fontSize: 24,
+        textAlign: "center",
     }
 })
 const mapStateToProps = (state: any) => {
