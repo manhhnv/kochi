@@ -5,6 +5,7 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import NotificationScreen from '../screens/extensions/NotificationScreen';
 import GrammarDetail from '../screens/grammars/GrammarDetail';
 import ListLessons from '../screens/grammars/ListLessons';
 import Home from '../screens/Home';
@@ -13,6 +14,7 @@ import Profile from '../screens/Profile';
 import ReadingCategory from '../screens/reading/ReadingCategory';
 import ReadingDetail from '../screens/reading/ReadingDetail';
 import ReadingLessons from '../screens/reading/ReadingLessons';
+import ReadingStartTesting from '../screens/reading/ReadingStartTesting';
 import Register from '../screens/Register';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import Vocabularies from '../screens/Vocabularies';
@@ -137,6 +139,15 @@ export function TabStackNavigator() {
         component={ReadingDetail}
         options={{
           headerTitle: 'Luyện tập',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="NotificationScreen"
+        component={NotificationScreen}
+        options={{
+          headerTitle: 'Bắt đầu',
           headerStyle: { backgroundColor: "#00CE9F", },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
