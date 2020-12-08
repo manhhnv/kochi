@@ -2,30 +2,50 @@ import * as React from 'react';
 import {useState} from "react";
 import {
   Body, Container, Content, Icon, Left, List,
-  ListItem, Right, Text, View,Header,Button,Switch,Thumbnail
+  ListItem, Right, Text, View,Header,Button,Switch,Thumbnail,
 }
   from 'native-base';
 import CourseOverview from '../../components/CourseOverview';
 import { Alert, Animated, Dimensions, ImageBackground, ScrollView, StyleSheet, TouchableOpacity} from 'react-native';
 import * as Animatable from "react-native-animatable";
-import data from "../../data/vocabularyLession";
+import data from "../../data/vocabularyList";
 import ProgressCircle from 'react-native-progress-circle'
 const {width,height}= Dimensions.get('window');
 
 export default function VocabularyList({navigation,route}: any) {
     const son = route.params;
-    console.log(son);
-    
+    const renderRow = (item : any,index:number): any  => {
+        return (
+            <View style={[styles.row, item.id % 2 == 0 ? {backgroundColor:"#e8fcf7"} : null]} key={`item:${item.id}`}>
+                <View style={styles.left}>
+                    <Icon type="FontAwesome" name="volume-up" style={styles.icon} ></Icon>
+                    <View style={styles.contentLeft}>
+                        <Text style={styles.id}>{item.id}</Text>
+                        <Text style={{color:"red",fontSize:22,marginTop:10}}>{item.kanji}</Text>
+                        <Text >{item.hiragana}</Text>
+                        <Text style={{color:"#00CE9F",fontStyle:"italic"}}>{item.meaning}</Text>               
+                    </View>
+                    
+                </View>
+                <View style={styles.right}>
+                    <View style={styles.contentRight}>
+                        <Text style={{marginBottom:20}}>{item.example}</Text>
+                        <Text style={{color:"#00CE9F",fontStyle:"italic"}}>{item.example_meaning}</Text>
+                    </View>
+                    
+                </View>
+               
+            </View>
+        )
+    }
+
   return (
-    <ImageBackground
-            source={require('../../assets/images/background4.jpg')}
-            style={{
-                width: width,
-                height: 0.9 * height
-            }}
-        >
-            <Text>Hello day ta list tu vung</Text>
-        </ImageBackground>
+
+            <ScrollView>
+                {data.map((item,index) => {return renderRow(item,index)})}
+
+            </ScrollView>
+
   );
 }
 const styles = StyleSheet.create({
@@ -34,67 +54,70 @@ const styles = StyleSheet.create({
     flex:1,
 
   },
-  readingCategory: {
-      backgroundColor: '#fff',
-      shadowColor: "#000",
-      shadowOffset: {
-          width: 0,
-          height: 5,
-      },
-      shadowOpacity: 0.34,
-      shadowRadius: 6.27,
-      elevation: 10,
-      height: 0.14 * height,
-      marginTop: 0.05 * height,
-      borderRadius: 15,
-      borderBottomWidth: 5,
-      borderBottomColor: '#00CE9F',
-      marginHorizontal: 0.03 * width,
-      justifyContent:"center",
-      flex:1,
-  },
-  titleContainer: {
-      flexDirection: 'row',
-      alignItems:"center",
-      justifyContent: 'flex-start',
-      marginTop: 0.02*height,
-      position:"relative",
-      flex:1,
-  },
-  title:{
-    fontWeight: "bold",
-     color: 'red'
-  },
-  title1: {
-      fontWeight: "bold",
-      fontSize: 18,
-      marginLeft: 0.05 * width,
-  },
-  desc:{
+  row:{
+    
+    
+    flex:1,
+    flexDirection:"row",
+    position:"relative",
 
-  },
-  index:{
-    justifyContent:"center",
-    alignItems:"center",
-    padding:5,
-    width:width*0.1,
-    backgroundColor:"#00CE9F",
-    marginBottom:width*0.04,
-    borderTopRightRadius:15,
-    borderBottomRightRadius:15,
+    width:width,
+    height:height*0.2,
  
-  },
-  content:{
-    marginLeft:width*0.04,
-    marginBottom:width*0.04,
+    backgroundColor:"white",
     
   },
-  progress:{
+  left:{
+    flex:1,
+
+    borderBottomColor:"lightgray",
+    borderRightColor:"lightgray",
+    borderBottomWidth:1,
+    borderRightWidth:1,
+
+  },
+  contentLeft:{
+    marginTop:width*0.02,
+    marginLeft:width*0.02,
+    
+  },
+  
+  right:{
+    flex:1,
+
+    borderBottomColor:"lightgray",
+    borderBottomWidth:1,
+
+    paddingLeft:width*0.02,
+  },
+  contentRight:{
+    marginTop:width*0.02,
+    marginRight:width*0.02,
+  },
+
+  id:{
+    backgroundColor:"lightgray",
+
+    borderRadius:3,
+    width:width*0.05,
+    
+  
+    textAlign:"center"
+  },
+  icon:{
+
+    color:"#00CE9F",
+    fontSize:25,
+
     position:"absolute",
-    right:20,
-    bottom:width*0.04,
+    right:width*0.02,
+    top:width*0.02,
     
 
+
+
+
   },
- 
+
+
 });

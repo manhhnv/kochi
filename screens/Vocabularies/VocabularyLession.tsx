@@ -44,55 +44,12 @@ export default function VocabularyLession({navigation,route}: any) {
                             color="#00CE9F"
                             shadowColor="lightgray"
                             bgColor="#fff"
-                            
                             children={<Text>0%</Text>}
                           />
                     </View>
                   </Content>
                 </Animatable.View>
               </TouchableOpacity>))}
-
-
-                {/* <TouchableOpacity onPress={() => navigation.navigate("ReadingLessons", {readingCategory: 1})}>
-                    <Animatable.View animation="bounceInLeft" style={styles.readingCategory} duration={700} >
-                        <Content contentContainerStyle={styles.titleContainer}>
-                            <Thumbnail source={require('../../assets/images/logo.png')} />
-                            <View>
-                                <Text style={styles.title}>Đọc hiểu đoạn văn ngắn</Text>
-                            </View>
-                        </Content>
-                    </Animatable.View>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate("ReadingLessons", {readingCategory: 2})}>
-                    <Animatable.View animation="bounceInRight" style={styles.readingCategory}>
-                        <Content contentContainerStyle={styles.titleContainer}>
-                            <Thumbnail source={require('../../assets/images/logo.png')} />
-                            <View>
-                                <Text style={styles.title}>Đọc hiểu đoạn văn trung</Text>
-                            </View>
-                        </Content>
-                    </Animatable.View>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate("ReadingLessons", {readingCategory: 3})}>
-                    <Animatable.View animation="bounceInLeft" style={styles.readingCategory}>
-                        <Content contentContainerStyle={styles.titleContainer}>
-                            <Thumbnail source={require('../../assets/images/logo.png')} />
-                            <View>
-                                <Text style={styles.title}>Đọc hiểu đoạn văn dài</Text>
-                            </View>
-                        </Content>
-                    </Animatable.View>
-                </TouchableOpacity> */}
-                {/* <TouchableOpacity onPress={() => navigation.navigate("NotificationScreen")}>
-                    <Animatable.View animation="bounceInRight" style={styles.readingCategory}>
-                        <Content contentContainerStyle={styles.titleContainer}>
-                            <Thumbnail source={require('../../assets/images/history/testing.png')} />
-                            <View>
-                                <Text style={styles.title}>Kiểm tra</Text>
-                            </View>
-                        </Content>
-                    </Animatable.View>
-                </TouchableOpacity> */}
             </ScrollView>
         </ImageBackground>
   );
@@ -140,6 +97,8 @@ const styles = StyleSheet.create({
       marginLeft: 0.05 * width,
   },
   desc:{
+    fontStyle:"italic",
+    color:"#00CE9F",
 
   },
   index:{
