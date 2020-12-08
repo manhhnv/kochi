@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Axios from "axios";
+import { Alert } from 'react-native';
 import { USER_LOGIN, USER_REGISTER, QUERY_ME } from "../../service/user.service";
 import { LoginInput, RegisterInput } from "../../types";
 
@@ -34,6 +35,7 @@ export const userLogin = (input: LoginInput) => {
             })
             .catch(e => {
                 console.log(e)
+                Alert.alert("Email or password incorrect 😢")
             })
     }
 }
@@ -54,6 +56,7 @@ export const me = (token: string) => {
         })
         .catch(e => {
             console.log(e)
+            Alert.alert("Please login 😢")
         })
     }
 }
