@@ -44,7 +44,7 @@ const ReadingCategory = ({navigation}: any) => {
                         </Content>
                     </Animatable.View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate("NotificationScreen")}>
+                <TouchableOpacity onPress={() => navigation.navigate("ReadingTest")}>
                     <Animatable.View animation="bounceInRight" style={styles.readingCategory}>
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/history/testing.png')} />

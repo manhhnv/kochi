@@ -15,6 +15,7 @@ import ReadingCategory from '../screens/reading/ReadingCategory';
 import ReadingDetail from '../screens/reading/ReadingDetail';
 import ReadingLessons from '../screens/reading/ReadingLessons';
 import ReadingStartTesting from '../screens/reading/ReadingStartTesting';
+import ReadingTest from '../screens/reading/ReadingTest';
 import Register from '../screens/Register';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import Vocabularies from '../screens/Vocabularies';
@@ -148,6 +149,15 @@ export function TabStackNavigator() {
         component={NotificationScreen}
         options={{
           headerTitle: 'Bắt đầu',
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="ReadingTest"
+        component={ReadingTest}
+        options={{
+          headerTitle: () => null,
           headerStyle: { backgroundColor: "#00CE9F", },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}

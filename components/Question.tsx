@@ -6,7 +6,7 @@ const { width, height } = Dimensions.get('screen');
 const Question = ({questions}: any) => {
     const [userAnswer, setUserAnswer]: any = useState(null);
     const [arrayUserAnswer, setArrayUserAnswer]: any = useState([]);
-    const updateUserAnswers = (questionId: number, answer: any) => {
+    const updateUserAnswers = (questionId: number, answer: any, score: number) => {
         let index = arrayUserAnswer.findIndex((q: any) => q?.questionId === questionId)
         if (index !== -1) {
             let temporaryArray = arrayUserAnswer.slice();
@@ -14,17 +14,17 @@ const Question = ({questions}: any) => {
             setArrayUserAnswer(temporaryArray)
         }
         else {
-            setArrayUserAnswer([...arrayUserAnswer, { 'questionId': questionId, 'answer': answer }])
+            setArrayUserAnswer([...arrayUserAnswer, { 'questionId': questionId, 'answer': answer, score: score}])
         }
         console.log(arrayUserAnswer)
     }
     return (
         <React.Fragment>
             {questions.map((q: any, i: number) => (
-                <View key={i} style={{marginTop: 0.02*height}}>
+                <View key={i} style={{marginTop: 0.02*height, marginBottom: 0.05*height}}>
                     <Text style={styles.lessonDetail}>
                         <Text style={[{ fontWeight: "bold", color: 'red' }, styles.lessonDetail]}>
-                            問題：
+                            問題{ ' ' + (1+i)}：
                         </Text>
                         {q.content}
                     </Text>
@@ -33,36 +33,14 @@ const Question = ({questions}: any) => {
                             <Radio
                                 color="gray"
                                 selectedColor="green"
-                                onPress={() => updateUserAnswers(q.id, a)}
-                                selected={arrayUserAnswer.some((e: any) => JSON.stringify(e) === JSON.stringify({ "questionId": q.id, "answer": a }))}
+                                onPress={() => updateUserAnswers(q.id, a, q.score)}
+                                selected={arrayUserAnswer.some((e: any) => JSON.stringify(e) === JSON.stringify({ "questionId": q.id, "answer": a, score: q.score}))}
                             ></Radio>
                             <Text style={{ fontSize: 20 }}>{a.text}</Text>
                         </View>
                     ))}
                 </View>
             ))}
-            <Grid>
-                <Root>
-                    <Row style={{ marginTop: 0.1 * width, marginLeft: 0.17 * width, marginBottom: 0.18 * width }}>
-                        <Col>
-                            <Button success disabled={userAnswer !== null ? false : true}>
-                                <Text
-                                >
-                                    Đáp án
-                                            </Text>
-                            </Button>
-                        </Col>
-                        <Col>
-                            <Button
-                                primary
-                                onPress={() => console.log(arrayUserAnswer)}
-                            >
-                                <Text>Tiếp theo</Text>
-                            </Button>
-                        </Col>
-                    </Row>
-                </Root>
-            </Grid>
         </React.Fragment>
     )
 }

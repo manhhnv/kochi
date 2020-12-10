@@ -154,7 +154,6 @@ const ReadingDetail = ({ route, navigation, reading }: any) => {
                             </View>
                         ) : null}
                     </Animatable.View>
-                    <Question questions={questions}/>
                 </ScrollView>
             ) : (
                     <Spinner />

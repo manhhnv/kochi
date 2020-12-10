@@ -75,8 +75,8 @@ const styles = StyleSheet.create({
         height: 0.14 * height,
         marginTop: 0.05 * height,
         borderRadius: 15,
-        borderBottomWidth: 5,
-        borderBottomColor: '#ecba0c',
+        borderLeftWidth: 10,
+        borderLeftColor: '#ecba0c',
         marginHorizontal: 0.03 * width,
     },
     titleContainer: {
