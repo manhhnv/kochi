@@ -12,6 +12,7 @@ const FragmentListening = ({
     answerStateIndex,
     timeoutFlag,
     route,
+    finished
 }: any) => {
     const [playing, setPlaying]: any = useState(false);
     const playAudioHandle = async () => {
@@ -24,7 +25,10 @@ const FragmentListening = ({
                 await soundObject.playAsync();
                 setPlaying(true)
             }
-            else {
+            else if (playing == true || finished == true){
+                if (!soundObject._loaded) {
+                    await soundObject.loadAsync(require('../../assets/audio/audio.mp3'))
+                }
                 await soundObject.pauseAsync()
                 setPlaying(false)
             }
