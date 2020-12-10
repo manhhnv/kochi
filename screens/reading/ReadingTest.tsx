@@ -28,6 +28,7 @@ const ReadingTest = () => {
             answersTotal += answer.length;
         })
         if (timeoutFlag == true) {
+            setFinished(true)
             console.log(answers)
         }
         else {
@@ -35,6 +36,7 @@ const ReadingTest = () => {
                 Alert.alert("Bạn phải điền đủ tất cả câu hỏi 😢")
             }
             else {
+                setFinished(true)
                 console.log(answers)
             }
         }

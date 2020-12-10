@@ -26,8 +26,8 @@ const ListeningTesting = ({navigation, route}: any) => {
         if (timeoutFlag == true) {
             setFinished(true)
             navigation.navigate("TestingResult", {answers: answers, problems: data})
-            console.log("ANSWERS", answers)
-            console.log("DATA-QUESTION", data)
+            // console.log("ANSWERS", answers)
+            // console.log("DATA-QUESTION", data)
         }
         else {
             if (answersTotal < totalQuestions) {
@@ -55,6 +55,7 @@ const ListeningTesting = ({navigation, route}: any) => {
                         answerStateIndex={0}
                         timeoutFlag={timeoutFlag}
                         route={route}
+                        finished={finished}
                         
                     />
                 </Tab>
@@ -66,6 +67,7 @@ const ListeningTesting = ({navigation, route}: any) => {
                         answerStateIndex={1}
                         timeoutFlag={timeoutFlag}
                         route={route}
+                        finished={finished}
                        
                     />
                 </Tab>
@@ -77,6 +79,7 @@ const ListeningTesting = ({navigation, route}: any) => {
                         answerStateIndex={2}
                         timeoutFlag={timeoutFlag}
                         route={route}
+                        finished={finished}
                        
                     />
                 </Tab>

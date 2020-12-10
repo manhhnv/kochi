@@ -2,8 +2,8 @@ import { Body, Container, Left, ListItem, Separator, Text, Button } from 'native
 import React from 'react'
 import { ScrollView, View } from 'react-native'
 
-function TestingResult({navigation, route}: any) {
-    const {answers, problems} = route.params;
+function TestingResult({ navigation, route }: any) {
+    const { answers, problems } = route.params;
     const correctAnswer = (result: any, answer: any) => {
         if (result.correct == true) {
             return "#0fc33b";
@@ -14,17 +14,17 @@ function TestingResult({navigation, route}: any) {
         return "#939393";
     }
     return (
-        
-            <ScrollView style={{backgroundColor: "#fff"}}>
+        <>
+            <ScrollView style={{ backgroundColor: "#fff" }}>
                 {problems.map((problem: any, i: number) => (
                     <React.Fragment key={i}>
                         <Separator bordered>
-                            <Text style={{fontSize: 25, fontWeight: "bold", color: "red"}}>問題 {i+1}</Text>
+                            <Text style={{ fontSize: 25, fontWeight: "bold", color: "red" }}>問題 {i + 1}</Text>
                         </Separator>
                         {problem.questions.map((question: any, j: number) => (
-                            <ListItem>
+                            <ListItem key={j}>
                                 <Left>
-                                    <Text style={{fontSize: 20}}>問題 {j + 1}</Text>
+                                    <Text style={{ fontSize: 20 }}>問題 {j + 1}</Text>
                                 </Left>
                                 <Body style={{ flexDirection: "row", justifyContent: "space-around" }}>
                                     {question.answers.map((answer: any, k: number) => {
@@ -34,16 +34,18 @@ function TestingResult({navigation, route}: any) {
                                                 rgb = correctAnswer(answer, answers[i][j]);
                                             }
                                             else {
-                                                rgb="#939393"
+                                                rgb = "#939393"
                                             }
                                         }
-                                        catch(e) {
+                                        catch (e) {
                                             // console.log(e)
-                                            rgb="#939393"
+                                            if (answer.correct != true) {
+                                                rgb = "#939393";
+                                            }
                                         }
                                         return (
                                             <React.Fragment key={k}>
-                                                <Button key={j} style={{backgroundColor: rgb}}>
+                                                <Button key={j} style={{ backgroundColor: rgb }}>
                                                     <Text>{k + 1}</Text>
                                                 </Button>
                                             </React.Fragment>
@@ -55,6 +57,10 @@ function TestingResult({navigation, route}: any) {
                     </React.Fragment>
                 ))}
             </ScrollView>
+            <Button full onPress={() => navigation.navigate("ListeningCategory")}>
+                <Text>Quay lại</Text>
+            </Button>
+        </>
     )
 }
 
