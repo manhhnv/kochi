@@ -2,7 +2,7 @@ import * as React from 'react';
 import {useState} from "react";
 import {
   Body, Container, Content, Icon, Left, List,
-  ListItem, Right, Text, View,Header,Button,Switch,Thumbnail,
+  ListItem, Right, Text, View,Header,Button,Switch,Thumbnail,Tabs,Tab, TabHeading
 }
   from 'native-base';
 import CourseOverview from '../../components/CourseOverview';
@@ -40,11 +40,22 @@ export default function VocabularyList({navigation,route}: any) {
     }
 
   return (
+      <Container>
 
+        <Tabs>
+          <Tab  activeTextStyle={{fontSize:50,color:"red"}}  heading={<TabHeading  activeTextStyle={{color:"red"}}  style={{backgroundColor:"#00CE9F"}}><Text>Từ vựng</Text></TabHeading>}>
             <ScrollView>
                 {data.map((item,index) => {return renderRow(item,index)})}
-
             </ScrollView>
+          </Tab>
+          <Tab activeTextStyle={{fontSize:50,color:"red"}}  heading={<TabHeading activeTextStyle={{fontSize:50,color:"red"}}  style={{backgroundColor:"#00CE9F"}}><Text>Flash Card</Text></TabHeading>}>
+            <Text>Day la flashcard</Text>
+          </Tab>
+        </Tabs>
+           
+
+      </Container>
+
 
   );
 }
