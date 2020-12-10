@@ -1,4 +1,4 @@
-import { Container, Text, View, Header, Content, List, ListItem, Left, Right, Icon, Thumbnail } from 'native-base';
+import { Container, Text, View, Header, Content, List, ListItem, Left, Right, Icon, Thumbnail, Row } from 'native-base';
 import React, { useState } from 'react';
 import { Alert, Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
 import { grammarLesson } from '../../data/grammarLesson';
@@ -27,23 +27,40 @@ const ListLessons = ({ navigation }: any) => {
                             >
                                 
                                     <Left>
-                                        <Animatable.View animation="bounceInRight" >
-                                            <Text style={[styles.grammarForm, activeGrammar == l.id ? styles.active : null]}>
-                                                {l.id + ' .'} {l.form}
-                                            </Text>
-                                            </Animatable.View>
+                                        <Animatable.View animation="bounceInRight" duration={700}>
+                                            <Content contentContainerStyle={styles.titleContainer}>
+                                            <Thumbnail small source={require('../../assets/images/grammar.png')} />
+                                                <View>
+                                                    <Text style={[styles.grammarForm, activeGrammar == l.id ? styles.active : null]}>
+                                                        {l.form}
+                                                    </Text>
+                                                </View>
+                                            </Content>
+                                        </Animatable.View>
                                     </Left>
                                     <Right>
-                                        <Animatable.View animation="bounceInRight" >
+                                        <Animatable.View animation="bounceInLeft" duration={700}>
                                             {activeGrammar === l.id ? <Thumbnail source= {activeGrammar === l.id ? require('../../assets/images/user-hp.png') : null}  /> 
                                             : <Icon type="AntDesign" name="right" style={activeGrammar == l.id ? styles.active : null} />}
                                         </Animatable.View>
                                     </Right>
                                 
                             </ListItem>
+                            
                         </TouchableOpacity>
+
                     ))}
                 </List>
+                <TouchableOpacity onPress={() => grammarDetailHandle(16)}>
+                    <Animatable.View animation="bounceInRight" duration={700}>
+                        <Content contentContainerStyle={styles.titleContainer}>
+                            <Thumbnail source={require('../../assets/images/history/testing.png')} />
+                            <View>
+                                <Text style={[styles.title]}>Kiểm tra</Text>
+                            </View>
+                        </Content>
+                    </Animatable.View>
+                </TouchableOpacity>
             </Content>
         </Container>
     )
@@ -69,6 +86,16 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginRight: 0.02 * width,
         paddingLeft: 0.01 * width
+    },
+    titleContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-start'
+    },
+    title: {
+        fontSize: 19,
+        marginLeft: 0.05 * width,
+        color: "blue"
     }
 })
 export default ListLessons;
