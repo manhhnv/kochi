@@ -2,14 +2,14 @@ import { Body, Button, Container, Header, Icon, Left, Spinner, Text, Title, View
 import React, { useEffect, useState } from 'react'
 import { Audio } from 'expo-av';
 import Question from '../../components/Question';
-import { Dimensions, ScrollView, StyleSheet } from 'react-native';
+import { Alert, Dimensions, ScrollView, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 const { width, height } = Dimensions.get('screen')
 const soundObject = new Audio.Sound();
 const ListeningDetail = ({ route, navigation, listening }: any) => {
     const { lessonId, category } = route.params;
     const [playing, setPlaying]: any = useState(false);
-    const [answers, setAnswers]: any = useState([]);
+    const [answers, setAnswers]: any = useState([[]]);
     const [lesson, setLesson]: any = useState(null);
     const [check, setCheck] = useState(false);
     const playAudioHandle = async () => {
@@ -65,7 +65,19 @@ const ListeningDetail = ({ route, navigation, listening }: any) => {
         }
     }, [listening])
     const checkAnswerHandle = () => {
-
+        const totalAnswers = answers[0].length
+        const totalQuestions = lesson.questions.length
+        if (parseInt(totalQuestions) == parseInt(totalAnswers)) {
+            navigation.navigate("ListeningResult", {
+                lessonId: lessonId,
+                answers: answers[0],
+                category: category,
+                questions: lesson.questions,
+            })
+        }
+        else {
+            Alert.alert("Bạn phải nhập đủ câu trả lời ⚠️")
+        }
     }
     return (
         <Container style={{ paddingTop: 20 }}>
@@ -82,7 +94,7 @@ const ListeningDetail = ({ route, navigation, listening }: any) => {
                     <Title>Luyện tập</Title>
                 </Body>
             </Header>
-            <View style={{paddingBottom: 0.2*height}}>
+            <View style={{ paddingBottom: 0.2 * height }}>
                 {lesson !== null ? (
                     <React.Fragment>
                         <Button onPress={playAudioHandle} full>
@@ -101,14 +113,20 @@ const ListeningDetail = ({ route, navigation, listening }: any) => {
                                 setAnswers={setAnswers}
                                 timeoutFlag={false}
                             />
-                            <Button success onPress={() => console.log(answers)}>
+
+                            {/* Must be pause */}
+                            <Button
+                                onPress={() => {
+                                    checkAnswerHandle();
+                                    pauseAudioHandle()
+                                }}>
                                 <Text>Kiểm tra đáp án</Text>
                             </Button>
                         </ScrollView>
                     </React.Fragment>
-                ): (
-                    <Spinner />
-                )}
+                ) : (
+                        <Spinner />
+                    )}
             </View>
         </Container>
     )
