@@ -20,6 +20,7 @@ import Profile from '../screens/Profile';
 import ReadingCategory from '../screens/reading/ReadingCategory';
 import ReadingDetail from '../screens/reading/ReadingDetail';
 import ReadingLessons from '../screens/reading/ReadingLessons';
+import ReadingResult from '../screens/reading/ReadingResult';
 import ReadingStartTesting from '../screens/reading/ReadingStartTesting';
 import ReadingTest from '../screens/reading/ReadingTest';
 import Register from '../screens/Register';
@@ -217,6 +218,15 @@ export function TabStackNavigator() {
       <TabStack.Screen
         name="TestingResult"
         component={TestingResult}
+        options={{
+          headerTitle: "Đáp án",
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="ReadingResult"
+        component={ReadingResult}
         options={{
           headerTitle: "Đáp án",
           headerStyle: { backgroundColor: "#00CE9F", },
