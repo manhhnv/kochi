@@ -14,8 +14,8 @@ const ListeningCategory = ({ navigation }: any) => {
             }}
         >
             <ScrollView>
-                <TouchableOpacity onPress={() => navigation.navigate("ReadingLessons", {readingCategory: 1})}>
-                    <Animatable.View animation="flipInY" style={styles.readingCategory} duration={700} >
+                <TouchableOpacity onPress={() => navigation.navigate("ListeningLessons", {readingCategory: 1, category: "topic"})}>
+                    <Animatable.View animation="flipInX" style={styles.readingCategory} duration={700} >
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/courses/listening.png')} />
                             <View>
@@ -24,8 +24,8 @@ const ListeningCategory = ({ navigation }: any) => {
                         </Content>
                     </Animatable.View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate("ReadingLessons", {readingCategory: 2})}>
-                    <Animatable.View animation="flipInY" style={styles.readingCategory}>
+                <TouchableOpacity onPress={() => navigation.navigate("ListeningLessons", {readingCategory: 2, category:"conversation"})}>
+                    <Animatable.View animation="flipInX" style={styles.readingCategory}>
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/courses/listening.png')} />
                             <View>
@@ -34,8 +34,8 @@ const ListeningCategory = ({ navigation }: any) => {
                         </Content>
                     </Animatable.View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate("ReadingLessons", {readingCategory: 3})}>
-                    <Animatable.View animation="flipInY" style={styles.readingCategory}>
+                <TouchableOpacity onPress={() => navigation.navigate("ListeningLessons", {readingCategory: 3, category: "reply"})}>
+                    <Animatable.View animation="flipInX" style={styles.readingCategory}>
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/courses/listening.png')} />
                             <View>
@@ -45,7 +45,7 @@ const ListeningCategory = ({ navigation }: any) => {
                     </Animatable.View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate("ReadingTest")}>
-                    <Animatable.View animation="flipInY" style={styles.readingCategory}>
+                    <Animatable.View animation="flipInX" style={styles.readingCategory}>
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/history/testing.png')} />
                             <View>
