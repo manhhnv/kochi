@@ -11,12 +11,15 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Dimensions, Image, ScrollView, StyleSheet } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { connect } from 'react-redux';
+import Question from '../../components/Question';
+import { readingQuestions } from '../../data/readingQuestions';
 const { width, height } = Dimensions.get('screen');
 const MARU_IMG = require('../../assets/images/maru.jpg');
 const BATSU_IMG = require('../../assets/images/batsu.jpg')
 var length: number;
 var nextLessonId: number;
 const ReadingDetail = ({ route, navigation, reading }: any) => {
+    const questions = readingQuestions().questions;
     const { lessonId, readingCategory, currentIndex } = route.params;
     const [userAnswer, setUserAnswer]: any = useState(null);
     const [resultCheck, setResultCheck]: any = useState(false);
