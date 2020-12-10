@@ -2,7 +2,7 @@ import { Icon, Text } from 'native-base';
 import React, { useEffect, useState } from 'react'
 import { Alert, Dimensions, StyleSheet } from 'react-native';
 const { width, height } = Dimensions.get('screen')
-const CountDown = ({time}: any) => {
+const CountDown = ({time, timeoutFlag, setTimeoutFlag}: any) => {
     const minutes = parseInt(time) / 60;
     const [m, setM]: any = useState(minutes-1);
     const [s, setS]: any = useState(59);
@@ -16,6 +16,9 @@ const CountDown = ({time}: any) => {
                 }
             }, 1000)
             return () => clearInterval(interval)
+        }
+        else {
+            setTimeoutFlag(true)
         }
     })
     return (
