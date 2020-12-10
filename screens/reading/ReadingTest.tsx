@@ -5,7 +5,7 @@ import CountDown from '../../components/CountDown';
 import Question from '../../components/Question';
 import { generateReadingTesting } from '../../data/readingQuestions';
 const { width, height } = Dimensions.get('screen')
-const ReadingTest = () => {
+const ReadingTest = ({navigation}: any) => {
     const [problems, setProblems]: any = useState(null);
     const [answers, setAnswers]: any = useState([]);
     const [timeoutFlag, setTimeoutFlag] = useState(false)
@@ -29,7 +29,12 @@ const ReadingTest = () => {
         })
         if (timeoutFlag == true) {
             setFinished(true)
-            console.log(answers)
+            navigation.navigate("ReadingResult", {
+                answers: answers,
+                problems: problems
+            })
+            console.log("ANSWERS", answers)
+            console.log("QUESTION", problems)
         }
         else {
             if (answersTotal < totalQuestions) {
@@ -37,7 +42,12 @@ const ReadingTest = () => {
             }
             else {
                 setFinished(true)
-                console.log(answers)
+                navigation.navigate("ReadingResult", {
+                    answers: answers,
+                    problems: problems
+                })
+                console.log("ANSWERS", answers)
+                console.log("QUESTION", problems)
             }
         }
     }
@@ -45,7 +55,7 @@ const ReadingTest = () => {
         <React.Fragment>
             {problems != null ? (
                 <>
-                    <CountDown time={60} timeoutFlag={timeoutFlag} setTimeoutFlag={setTimeoutFlag} finished={finished}/>
+                    <CountDown time={600} timeoutFlag={timeoutFlag} setTimeoutFlag={setTimeoutFlag} finished={finished}/>
                     <Tabs>
                         <Tab heading="問題 1" tabStyle={{ backgroundColor: "#00CE9F" }} textStyle={{ color: "white" }}>
                             <ScrollView style={{ backgroundColor: "white", marginTop: 10 }}>
