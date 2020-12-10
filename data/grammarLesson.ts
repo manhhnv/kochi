@@ -72,9 +72,9 @@ export const grammarLesson = () => {
         },
         {
             id: 15,
-            form: '～たばかり～',
+            form: '～ないと、～なくちゃ',
             use: 'Vừa mới~'
-        },
+        }
     ];
     return data;
 }
