@@ -7,7 +7,9 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import NotificationScreen from '../screens/extensions/NotificationScreen';
 import GrammarDetail from '../screens/grammars/GrammarDetail';
+import GrammarTestingResult from '../screens/grammars/GrammarTestingResult';
 import ListLessons from '../screens/grammars/ListLessons';
+import TestingGrammar from '../screens/grammars/TestingGrammar';
 import Home from '../screens/Home';
 import ListeningCategory from '../screens/listening/ListeningCategory';
 import ListeningDetail from '../screens/listening/ListeningDetail';
@@ -229,6 +231,24 @@ export function TabStackNavigator() {
         component={ReadingResult}
         options={{
           headerTitle: "Đáp án",
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="TestingGrammar"
+        component={TestingGrammar}
+        options={{
+          headerTitle: () => null,
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="GrammarTestingResult"
+        component={GrammarTestingResult}
+        options={{
+          headerTitle: "Đáp án ngữ pháp",
           headerStyle: { backgroundColor: "#00CE9F", },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}

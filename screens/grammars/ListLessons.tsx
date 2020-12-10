@@ -59,7 +59,7 @@ const ListLessons = ({ navigation, getAllGrammar, grammar, user }: any) => {
 
                     ))}
                 </List>
-                <TouchableOpacity onPress={() => grammarDetailHandle(16)} style={styles.titleContainer}>
+                <TouchableOpacity onPress={() => navigation.navigate("TestingGrammar")} style={styles.titleContainer}>
                     <Left>
                         <Animatable.View animation="bounceInRight" duration={700}>
                             <Content contentContainerStyle={[styles.titleContainer, {paddingLeft: 0.02*width}]}>
