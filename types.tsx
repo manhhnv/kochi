@@ -51,6 +51,7 @@ export type TabStackParamList = {
   ReadingTest: undefined;
   ListeningCategory: undefined;
   ListeningLessons: undefined;
+  ListeningDetail: undefined;
 }
 export type CourseOverviewType = {
   totalUnits: number;

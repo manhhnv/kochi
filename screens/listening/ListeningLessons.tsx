@@ -42,10 +42,10 @@ const ListeningLessons = ({
                         <TouchableOpacity
                             key={i}
                             onPress={
-                                () => navigation.navigate("ReadingDetail", {
-                                    readingCategory: readingCategory,
+                                () => navigation.navigate("ListeningDetail", {
+                                    questions: lesson.questions,
                                     lessonId: lesson.id,
-                                    currentIndex: i
+                                    category: category
                                 })
                             }
                         >
