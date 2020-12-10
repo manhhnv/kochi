@@ -44,7 +44,7 @@ const ListeningCategory = ({ navigation }: any) => {
                         </Content>
                     </Animatable.View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate("ReadingTest")}>
+                <TouchableOpacity onPress={() => navigation.navigate("ListeningTesting")}>
                     <Animatable.View animation="flipInX" style={styles.readingCategory}>
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/history/testing.png')} />

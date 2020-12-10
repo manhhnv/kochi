@@ -10,7 +10,11 @@ import GrammarDetail from '../screens/grammars/GrammarDetail';
 import ListLessons from '../screens/grammars/ListLessons';
 import Home from '../screens/Home';
 import ListeningCategory from '../screens/listening/ListeningCategory';
+import ListeningDetail from '../screens/listening/ListeningDetail';
 import ListeningLessons from '../screens/listening/ListeningLessons';
+import ListeningResult from '../screens/listening/ListeningResult';
+import ListeningTesting from '../screens/listening/ListeningTesting';
+import TestingResult from '../screens/listening/TestingResult';
 import Login from '../screens/Login';
 import Profile from '../screens/Profile';
 import ReadingCategory from '../screens/reading/ReadingCategory';
@@ -178,6 +182,43 @@ export function TabStackNavigator() {
         component={ListeningLessons}
         options={{
           headerTitle: "Bài học",
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="ListeningDetail"
+        component={ListeningDetail}
+        options={{
+          header: () => null,
+          headerTitle: "Luyện tập",
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="ListeningResult"
+        component={ListeningResult}
+        options={{
+          headerTitle: "Đáp án",
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="ListeningTesting"
+        component={ListeningTesting}
+        options={{
+          headerTitle: () => null,
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="TestingResult"
+        component={TestingResult}
+        options={{
+          headerTitle: "Đáp án",
           headerStyle: { backgroundColor: "#00CE9F", },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
