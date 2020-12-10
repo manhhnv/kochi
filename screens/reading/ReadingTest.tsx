@@ -9,6 +9,7 @@ const ReadingTest = () => {
     const [problems, setProblems]: any = useState(null);
     const [answers, setAnswers]: any = useState([]);
     const [timeoutFlag, setTimeoutFlag] = useState(false)
+    const [finished,setFinished]: any = useState(false);
     useEffect(() => {
         setTimeout(() => {
             const response = generateReadingTesting();
@@ -27,6 +28,7 @@ const ReadingTest = () => {
             answersTotal += answer.length;
         })
         if (timeoutFlag == true) {
+            setFinished(true)
             console.log(answers)
         }
         else {
@@ -34,6 +36,7 @@ const ReadingTest = () => {
                 Alert.alert("Bạn phải điền đủ tất cả câu hỏi 😢")
             }
             else {
+                setFinished(true)
                 console.log(answers)
             }
         }
@@ -42,7 +45,7 @@ const ReadingTest = () => {
         <React.Fragment>
             {problems != null ? (
                 <>
-                    <CountDown time={60} timeoutFlag={timeoutFlag} setTimeoutFlag={setTimeoutFlag}/>
+                    <CountDown time={60} timeoutFlag={timeoutFlag} setTimeoutFlag={setTimeoutFlag} finished={finished}/>
                     <Tabs>
                         <Tab heading="問題 1" tabStyle={{ backgroundColor: "#00CE9F" }} textStyle={{ color: "white" }}>
                             <ScrollView style={{ backgroundColor: "white", marginTop: 10 }}>
