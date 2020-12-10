@@ -20,9 +20,9 @@ import ReadingTest from '../screens/reading/ReadingTest';
 import Register from '../screens/Register';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import Vocabularies from '../screens/Vocabularies';
-import VocabularyTopic from "../screens/vocabularies/VocabularyTopic";
 import VocabularyLession from "../screens/vocabularies/VocabularyLession";
 import VocabularyList from "../screens/vocabularies/VocabularyList";
+import VocabularyTopic from "../screens/vocabularies/VocabularyTopic";
 import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabStackParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();

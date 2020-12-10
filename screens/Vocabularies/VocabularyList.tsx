@@ -43,12 +43,12 @@ export default function VocabularyList({navigation,route}: any) {
       <Container>
 
         <Tabs>
-          <Tab  activeTextStyle={{fontSize:50,color:"red"}}  heading={<TabHeading  activeTextStyle={{color:"red"}}  style={{backgroundColor:"#00CE9F"}}><Text>Từ vựng</Text></TabHeading>}>
+          <Tab  activeTextStyle={{fontSize:13,color:"red"}}  heading={<TabHeading  activeTextStyle={{fontSize:13,color:"red"}}  style={{backgroundColor:"#00CE9F"}}><Text>Từ vựng</Text></TabHeading>}>
             <ScrollView>
                 {data.map((item,index) => {return renderRow(item,index)})}
             </ScrollView>
           </Tab>
-          <Tab activeTextStyle={{fontSize:50,color:"red"}}  heading={<TabHeading activeTextStyle={{fontSize:50,color:"red"}}  style={{backgroundColor:"#00CE9F"}}><Text>Flash Card</Text></TabHeading>}>
+          <Tab activeTextStyle={{fontSize:13,color:"red"}}  heading={<TabHeading activeTextStyle={{fontSize:13,color:"red"}}  style={{backgroundColor:"#00CE9F"}}><Text>Flash Card</Text></TabHeading>}>
             <Text>Day la flashcard</Text>
           </Tab>
         </Tabs>
