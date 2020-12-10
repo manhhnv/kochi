@@ -56,7 +56,6 @@ export const me = (token: string) => {
         })
         .catch(e => {
             console.log(e)
-            Alert.alert("Please login 😢")
         })
     }
 }
