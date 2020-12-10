@@ -226,7 +226,7 @@ export const listeningData = [
             },
             {
                 id: 3,
-                title: "Bài 1",
+                title: "Bài 3",
                 require: "まず CDを聞いて、それから質問を聞いて、1から4のから選びなさい。",
                 cdPath: "///////",
                 questions: [

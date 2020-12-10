@@ -4,33 +4,41 @@ import { Dimensions, ScrollView, StyleSheet, TouchableOpacity } from 'react-nati
 import { getReadingByCategory } from '../../data/getReadingByCategory'
 import * as Animatable from 'react-native-animatable';
 import { getAllReadingLessons } from '../../redux/actions/readingAction';
+import { getLessons } from '../../redux/actions/listeningAction';
 import { connect } from 'react-redux';
 const { width, height } = Dimensions.get('screen');
 
 
-const ListeningLessons = ({ navigation, route, user, getAllReadingLessons, reading }: any) => {
-    const { readingCategory } = route.params;
+const ListeningLessons = ({
+    navigation, route, user,
+    getAllReadingLessons, reading,
+    listening, getLessons
+}: any) => {
+    const { readingCategory, category } = route.params;
+    console.log(category)
     const [loading, setLoading] = useState(true);
     const [lessons, setLessons]: any = useState(null);
+    const [listeningLessons, setListeningLessons]: any = useState(null);
     useEffect(() => {
-        getAllReadingLessons(user?.token, readingCategory, () => {
-            if (readingCategory == 1) {
-                setLessons(reading.short)
+        getLessons(user?.token, category, () => {
+            console.log("listening")
+            if (category == "topic") {
+                setListeningLessons(listening.topic)
             }
-            else if (readingCategory == 2) {
-                setLessons(reading.medium)
+            else if (category == "conversation") {
+                setListeningLessons(listening.conversation)
             }
-            else if (readingCategory == 3) {
-                setLessons(reading.long)
+            else if (category == "reply") {
+                setListeningLessons(listening.reply)
             }
-            setLoading(false);
+            setLoading(false)
         })
-    }, [readingCategory])
+    }, [category])
     return (
         <React.Fragment>
-            {loading == false && lessons != null && lessons.length > 0? (
+            {loading == false && listeningLessons != null && listeningLessons.length > 0? (
                 <ScrollView>
-                    {lessons.map((lesson: any, i: number) => (
+                    {listeningLessons.map((lesson: any, i: number) => (
                         <TouchableOpacity
                             key={i}
                             onPress={
@@ -95,13 +103,17 @@ const mapStateToProps = (state: any) => {
     return {
         user: state.user,
         reading: state.reading,
+        listening: state.listening,
     }
 }
 const mapDispatchToProps = (dispatch: any) => {
     return {
         getAllReadingLessons: (
             token: string, readingCategory: number, callback?: any
-            ) => dispatch(getAllReadingLessons(token, readingCategory, callback))
+            ) => dispatch(getAllReadingLessons(token, readingCategory, callback)),
+        getLessons: (
+            token: string, category: string, callback?: any
+        ) => dispatch(getLessons(token, category, callback))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(React.memo(ListeningLessons))

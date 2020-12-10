@@ -6,7 +6,8 @@ export const GET_LISTENING_LESSON_REPLY = "GET_LISTENING_LESSON_REPLY";
 
 export const getLessons = (token: string, category: string, callback?: any) => {
     return async (dispatch: any) => {
-        const lessons = getListeningByCategory(category);
+        console.log("Action")
+        const lessons = await getListeningByCategory(category);
         switch(category) {
             case "topic":
                 dispatch({
@@ -19,11 +20,13 @@ export const getLessons = (token: string, category: string, callback?: any) => {
                     type: GET_LISTENING_LESSON_CONVERSATION,
                     payload: lessons
                 })
+                break;
             case "reply":
                 dispatch({
                     type: GET_LISTENING_LESSON_REPLY,
                     payload: lessons
                 })
+                break;
             default:
                 return null;
         }

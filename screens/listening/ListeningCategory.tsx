@@ -14,7 +14,7 @@ const ListeningCategory = ({ navigation }: any) => {
             }}
         >
             <ScrollView>
-                <TouchableOpacity onPress={() => navigation.navigate("ListeningLessons", {readingCategory: 1})}>
+                <TouchableOpacity onPress={() => navigation.navigate("ListeningLessons", {readingCategory: 1, category: "topic"})}>
                     <Animatable.View animation="flipInX" style={styles.readingCategory} duration={700} >
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/courses/listening.png')} />
@@ -24,7 +24,7 @@ const ListeningCategory = ({ navigation }: any) => {
                         </Content>
                     </Animatable.View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate("ListeningLessons", {readingCategory: 2})}>
+                <TouchableOpacity onPress={() => navigation.navigate("ListeningLessons", {readingCategory: 2, category:"conversation"})}>
                     <Animatable.View animation="flipInX" style={styles.readingCategory}>
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/courses/listening.png')} />
@@ -34,7 +34,7 @@ const ListeningCategory = ({ navigation }: any) => {
                         </Content>
                     </Animatable.View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate("ListeningLessons", {readingCategory: 3})}>
+                <TouchableOpacity onPress={() => navigation.navigate("ListeningLessons", {readingCategory: 3, category: "reply"})}>
                     <Animatable.View animation="flipInX" style={styles.readingCategory}>
                         <Content contentContainerStyle={styles.titleContainer}>
                             <Thumbnail source={require('../../assets/images/courses/listening.png')} />

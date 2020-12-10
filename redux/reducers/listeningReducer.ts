@@ -13,6 +13,7 @@ const listeningReducer = (state = initial, action: Action) => {
         case GET_LISTENING_LESSON_TOPIC:
             return { ...state, topic: action.payload }
         case GET_LISTENING_LESSON_CONVERSATION:
+            console.log("ABC")
             return { ...state, conversation: action.payload }
         case GET_LISTENING_LESSON_REPLY:
             return { ...state, reply: action.payload }
