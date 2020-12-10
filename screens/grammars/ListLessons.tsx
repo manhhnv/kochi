@@ -1,21 +1,29 @@
-import { Container, Text, View, Header, Content, List, ListItem, Left, Right, Icon, Thumbnail, Row } from 'native-base';
-import React, { useState } from 'react';
+import { Container, Text, View, Header, Content, List, ListItem, Left, Right, Icon, Thumbnail, Row, Spinner } from 'native-base';
+import React, { useEffect, useState } from 'react';
 import { Alert, Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
 import { grammarLesson } from '../../data/grammarLesson';
 import * as Animatable from 'react-native-animatable';
+import { getAllGrammar } from "../../redux/actions/grammarAction";
+import { connect } from "react-redux";
 const lessons = grammarLesson();
 const { width, height } = Dimensions.get('window');
-const ListLessons = ({ navigation }: any) => {
+const ListLessons = ({ navigation, getAllGrammar, grammar, user }: any) => {
     const [activeGrammar, setActiveGrammar]: any = useState(0);
     const grammarDetailHandle = (grammarId: number) => {
         setActiveGrammar(grammarId);
-        navigation.navigate("GrammarDetail", { grammarId: grammarId }, "GrammarTest")
+        navigation.navigate("GrammarDetail", { grammarId: grammarId, total: grammar.totalGrammars})
     }
+    useEffect(() => {
+        if (user !== null) {
+            getAllGrammar(user.token);
+        }
+    }, [])
     return (
         <Container>
-            <Content>
+            {grammar != null && grammar.list != null? (
+                <Content>
                 <List style={styles.container}>
-                    {lessons.map((l: any, i: number) => (
+                    {grammar.list.map((l: any, i: number) => (
                         <TouchableOpacity
                             key={i}
                             style={[styles.itemContainer]}
@@ -32,7 +40,7 @@ const ListLessons = ({ navigation }: any) => {
                                             <Thumbnail square small source={require('../../assets/images/grammar.png')} />
                                                 <View>
                                                     <Text style={[styles.grammarForm, activeGrammar == l.id ? styles.active : null]}>
-                                                        {l.form}
+                                                        {l.title}
                                                     </Text>
                                                 </View>
                                             </Content>
@@ -67,6 +75,9 @@ const ListLessons = ({ navigation }: any) => {
                     </Right>
                 </TouchableOpacity>
             </Content>
+            ):(
+                <Spinner/>
+            )}
         </Container>
     )
 }
@@ -102,4 +113,15 @@ const styles = StyleSheet.create({
         color: "blue"
     }
 })
-export default ListLessons;
+const mapStateToProps = (state: any) => {
+    return {
+        grammar: state.grammar,
+        user: state.user
+    }
+}
+const mapDispatchToProps = (dispatch: any) => {
+    return {
+        getAllGrammar: (token: string, callback?: any) => dispatch(getAllGrammar(token, callback))
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(React.memo(ListLessons));
