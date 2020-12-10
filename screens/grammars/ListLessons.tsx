@@ -9,7 +9,7 @@ const ListLessons = ({ navigation }: any) => {
     const [activeGrammar, setActiveGrammar]: any = useState(0);
     const grammarDetailHandle = (grammarId: number) => {
         setActiveGrammar(grammarId);
-        navigation.navigate("GrammarDetail", { grammarId: grammarId })
+        navigation.navigate("GrammarDetail", { grammarId: grammarId }, "GrammarTest")
     }
     return (
         <Container>
@@ -29,7 +29,7 @@ const ListLessons = ({ navigation }: any) => {
                                     <Left>
                                         <Animatable.View animation="bounceInRight" duration={700}>
                                             <Content contentContainerStyle={styles.titleContainer}>
-                                            <Thumbnail small source={require('../../assets/images/grammar.png')} />
+                                            <Thumbnail square small source={require('../../assets/images/grammar.png')} />
                                                 <View>
                                                     <Text style={[styles.grammarForm, activeGrammar == l.id ? styles.active : null]}>
                                                         {l.form}
@@ -51,15 +51,20 @@ const ListLessons = ({ navigation }: any) => {
 
                     ))}
                 </List>
-                <TouchableOpacity onPress={() => grammarDetailHandle(16)}>
-                    <Animatable.View animation="bounceInRight" duration={700}>
-                        <Content contentContainerStyle={styles.titleContainer}>
-                            <Thumbnail source={require('../../assets/images/history/testing.png')} />
-                            <View>
-                                <Text style={[styles.title]}>Kiểm tra</Text>
-                            </View>
-                        </Content>
-                    </Animatable.View>
+                <TouchableOpacity onPress={() => grammarDetailHandle(16)} style={styles.titleContainer}>
+                    <Left>
+                        <Animatable.View animation="bounceInRight" duration={700}>
+                            <Content contentContainerStyle={[styles.titleContainer, {paddingLeft: 0.02*width}]}>
+                                <Thumbnail source={require('../../assets/images/history/testing.png')} />
+                                <View>
+                                    <Text style={[styles.title]}>Kiểm tra</Text>
+                                </View>
+                            </Content>
+                        </Animatable.View>
+                    </Left>
+                    <Right>
+                        <Icon type="AntDesign" name="right" />
+                    </Right>
                 </TouchableOpacity>
             </Content>
         </Container>
@@ -94,7 +99,6 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 19,
-        marginLeft: 0.05 * width,
         color: "blue"
     }
 })
