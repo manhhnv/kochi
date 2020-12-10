@@ -9,15 +9,15 @@ import {
 import CourseOverview from '../../components/CourseOverview';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Animated, Dimensions, Image, ImageBackground,StyleSheet } from 'react-native';
+import {vocabularyData} from "../../data/vocabulary/vocabularyData";
 
-import data from "../../data/vocabularyTopic";
 const {width,height}= Dimensions.get('window');
 
 export default function VocabularyTopic({navigation}: any) {
     const [activeTopic,setActiveTopic] = useState(0);
-    
+ 
     const handleOpenTopic = (id:number):any => {
-        navigation.navigate("VocabularyLession", {topicId:id});
+        navigation.navigate("VocabularyLession", {categoryId:id});
         setActiveTopic(id);
     };
   return (
@@ -25,7 +25,7 @@ export default function VocabularyTopic({navigation}: any) {
 
     <Content>
       <List style={styles.container}>
-          {data.map((item,index) => <TouchableOpacity activeOpacity={0.85} key={item.id} >
+          {vocabularyData.map((item,index) => <TouchableOpacity activeOpacity={0.85} key={item.id} >
           <Animatable.View animation="bounceInRight">
             <ListItem style={[
                         {paddingVertical:20,},
@@ -38,8 +38,8 @@ export default function VocabularyTopic({navigation}: any) {
                                style={{width:30,height:30,marginTop:0.02*height}}
                         />
                     <View style={{marginLeft:10,width:width*0.7,overflow:"hidden",}}>
-                        <Text>{item.title}</Text>
-                        <Text style={[styles.desc,]}>{item.description}</Text>
+                        <Text>{item.category}</Text>
+                        <Text style={[styles.desc,]}>{item.desc}</Text>
                     </View>
                     
                 </Left>

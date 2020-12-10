@@ -8,12 +8,14 @@ import {
 import CourseOverview from '../../components/CourseOverview';
 import { Alert, Animated, Dimensions, ImageBackground, ScrollView, StyleSheet, TouchableOpacity} from 'react-native';
 import * as Animatable from "react-native-animatable";
-import data from "../../data/vocabularyList";
-import ProgressCircle from 'react-native-progress-circle'
+import {getVocabularyList} from "../../data/vocabulary/getVocabularyContent";
+import ProgressCircle from 'react-native-progress-circle';
+import FlashCard from "./VocabularyFlashCard";
 const {width,height}= Dimensions.get('window');
 
 export default function VocabularyList({navigation,route}: any) {
-    const son = route.params;
+    const {categoryId,listId} = route.params;
+     const data:any = getVocabularyList(categoryId,listId);
     const renderRow = (item : any,index:number): any  => {
         return (
             <View style={[styles.row, item.id % 2 == 0 ? {backgroundColor:"#e8fcf7"} : null]} key={`item:${item.id}`}>
@@ -45,11 +47,11 @@ export default function VocabularyList({navigation,route}: any) {
         <Tabs>
           <Tab  activeTextStyle={{fontSize:13,color:"red"}}  heading={<TabHeading  activeTextStyle={{fontSize:13,color:"red"}}  style={{backgroundColor:"#00CE9F"}}><Text>Từ vựng</Text></TabHeading>}>
             <ScrollView>
-                {data.map((item,index) => {return renderRow(item,index)})}
+                {data.map((item:any,index:number) => {return renderRow(item,index)})}
             </ScrollView>
           </Tab>
           <Tab activeTextStyle={{fontSize:13,color:"red"}}  heading={<TabHeading activeTextStyle={{fontSize:13,color:"red"}}  style={{backgroundColor:"#00CE9F"}}><Text>Flash Card</Text></TabHeading>}>
-            <Text>Day la flashcard</Text>
+            <FlashCard></FlashCard>
           </Tab>
         </Tabs>
            

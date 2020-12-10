@@ -8,13 +8,14 @@ import {
 import CourseOverview from '../../components/CourseOverview';
 import { Alert, Animated, Dimensions, ImageBackground, ScrollView, StyleSheet, TouchableOpacity} from 'react-native';
 import * as Animatable from "react-native-animatable";
-import data from "../../data/vocabularyLession";
+import {getVocabularyLesson} from "../../data/vocabulary/getVocabularyContent";
 import ProgressCircle from 'react-native-progress-circle'
 const {width,height}= Dimensions.get('window');
 
 export default function VocabularyLession({navigation,route}: any) {
-    const son = route.params;
-    console.log(son);
+    const {categoryId} = route.params;
+    const data:any = getVocabularyLesson(categoryId);
+
     
   return (
     <ImageBackground
@@ -25,8 +26,11 @@ export default function VocabularyLession({navigation,route}: any) {
             }}
         >
             <ScrollView>
-              {data.map((item,index) => (
-              <TouchableOpacity style={styles.container} onPress={()=> navigation.navigate("VocabularyList",{listVocabId:item.id})}>
+              {data.map((item :any,index:number) => (
+              <TouchableOpacity style={styles.container} 
+                                onPress={()=> navigation.navigate("VocabularyList",{listId:item.id,categoryId:categoryId})}
+                                key={item.id}
+              >
                 <Animatable.View animation="bounceInRight" style={styles.readingCategory}>
                   <Content contentContainerStyle={styles.titleContainer}>
                     <View style={styles.index}>
@@ -34,7 +38,7 @@ export default function VocabularyLession({navigation,route}: any) {
                     </View>  
                     <View style={styles.content}> 
                       <Text style={styles.title}>{item.title}</Text>
-                      <Text style={styles.desc}>{item.description}</Text>
+                      <Text style={styles.desc}>{item.desc}</Text>
                     </View>
                     <View style={styles.progress}>
                     <ProgressCircle
