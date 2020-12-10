@@ -51,7 +51,8 @@ export default function VocabularyList({navigation,route}: any) {
             </ScrollView>
           </Tab>
           <Tab activeTextStyle={{fontSize:13,color:"red"}}  heading={<TabHeading activeTextStyle={{fontSize:13,color:"red"}}  style={{backgroundColor:"#00CE9F"}}><Text>Flash Card</Text></TabHeading>}>
-            <FlashCard></FlashCard>
+            <FlashCard data = {data}></FlashCard>
+
           </Tab>
         </Tabs>
            

@@ -25,7 +25,7 @@ export default function VocabularyLession({navigation,route}: any) {
                 height: 0.9 * height
             }}
         >
-            <ScrollView>
+            <ScrollView style={{marginBottom:20}}>
               {data.map((item :any,index:number) => (
               <TouchableOpacity style={styles.container} 
                                 onPress={()=> navigation.navigate("VocabularyList",{listId:item.id,categoryId:categoryId})}

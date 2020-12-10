@@ -66,9 +66,10 @@ export type CourseOverviewType = {
   thumbnail?: any;
 }
 export type VocabularyFCardProps = {
+  onMarked?:any;
   kanji?: string;
   hiragana?: string;
-  vnjp?: string;
+  amount?:number;
   marked?: boolean;
   mean?: string;
   previousWord: any;

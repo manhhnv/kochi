@@ -167,8 +167,8 @@ export const vocabularyData = [
         lession:[
             {
                 id:1,
-                title:"家族",
-                desc:"Gia đình",
+                title:"時間",
+                desc:"Cách nói về thời gian",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -192,8 +192,8 @@ export const vocabularyData = [
             },
             {
                 id:2,
-                title:"友達と知り合い",
-                desc:"Bạn bè và người quen",
+                title:"食べ物",
+                desc:"Đời sống ẩm thực",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -217,8 +217,8 @@ export const vocabularyData = [
             },
             {
                 id:3,
-                title:"彼",
-                desc:"Người yêu",
+                title:"機械",
+                desc:"Dụng cụ và nguyên liệu nấu ăn",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -242,8 +242,8 @@ export const vocabularyData = [
             },
             {
                 id:4,
-                title:"どんな人",
-                desc:"Là người như thế nào?",
+                title:"料理の作る",
+                desc:"Cách làm món ăn",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -267,8 +267,8 @@ export const vocabularyData = [
             },
             {
                 id:5,
-                title:"コミュニケーション",
-                desc:"Giao tiếp",
+                title:"梶原",
+                desc:"Việc nhà",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -320,15 +320,15 @@ export const vocabularyData = [
 
     },
     {
-        category: "人と人との関係",
+        category: "私の町",
         id:3,
-        desc:"Quan hệ giữa người với người(113 từ)",
+        desc:"Thành phố của chúng tôi(132 từ)",
         icon:"leaf",
         lession:[
             {
                 id:1,
-                title:"家族",
-                desc:"Gia đình",
+                title:"街のじょうす",
+                desc:"Quang cảnh thành phố",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -352,8 +352,8 @@ export const vocabularyData = [
             },
             {
                 id:2,
-                title:"友達と知り合い",
-                desc:"Bạn bè và người quen",
+                title:"町を悪",
+                desc:"Đi bộ trong thành phố",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -377,8 +377,8 @@ export const vocabularyData = [
             },
             {
                 id:3,
-                title:"彼",
-                desc:"Người yêu",
+                title:"新幹線",
+                desc:"Tàu siêu tốc",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -402,8 +402,8 @@ export const vocabularyData = [
             },
             {
                 id:4,
-                title:"どんな人",
-                desc:"Là người như thế nào?",
+                title:"バス",
+                desc:"Xe buýt",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -427,8 +427,8 @@ export const vocabularyData = [
             },
             {
                 id:5,
-                title:"コミュニケーション",
-                desc:"Giao tiếp",
+                title:"行きます",
+                desc:"Lái xe",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -480,15 +480,15 @@ export const vocabularyData = [
 
     },
     {
-        category: "人と人との関係",
+        category: "勉強しよう！！",
         id:4,
-        desc:"Quan hệ giữa người với người(113 từ)",
+        desc:"Học nào!!!",
         icon:"leaf",
         lession:[
             {
                 id:1,
-                title:"家族",
-                desc:"Gia đình",
+                title:"学校",
+                desc:"Trường học",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -512,8 +512,8 @@ export const vocabularyData = [
             },
             {
                 id:2,
-                title:"友達と知り合い",
-                desc:"Bạn bè và người quen",
+                title:"勉強しよう",
+                desc:"Học tập",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -537,8 +537,8 @@ export const vocabularyData = [
             },
             {
                 id:3,
-                title:"彼",
-                desc:"Người yêu",
+                title:"日本の大学",
+                desc:"Trường đại học của Nhật Bản",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -562,8 +562,8 @@ export const vocabularyData = [
             },
             {
                 id:4,
-                title:"どんな人",
-                desc:"Là người như thế nào?",
+                title:"試験",
+                desc:"Thi cử",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -587,8 +587,8 @@ export const vocabularyData = [
             },
             {
                 id:5,
-                title:"コミュニケーション",
-                desc:"Giao tiếp",
+                title:"もっと頑張れ！",
+                desc:"Hãy cố gắng hơn nữa",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -800,15 +800,15 @@ export const vocabularyData = [
 
     },
     {
-        category: "人と人との関係",
+        category: "仕事",
         id:6,
-        desc:"Quan hệ giữa người với người(113 từ)",
+        desc:"Công việc (118 Từ)",
         icon:"leaf",
         lession:[
             {
                 id:1,
-                title:"家族",
-                desc:"Gia đình",
+                title:"アルバイト",
+                desc:"Việc làm thêm",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -832,8 +832,8 @@ export const vocabularyData = [
             },
             {
                 id:2,
-                title:"友達と知り合い",
-                desc:"Bạn bè và người quen",
+                title:"会社",
+                desc:"Công ty",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -857,8 +857,8 @@ export const vocabularyData = [
             },
             {
                 id:3,
-                title:"彼",
-                desc:"Người yêu",
+                title:"商品",
+                desc:"Quan hệ trên dưới",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -882,8 +882,8 @@ export const vocabularyData = [
             },
             {
                 id:4,
-                title:"どんな人",
-                desc:"Là người như thế nào?",
+                title:"どんな仕事",
+                desc:"Công việc ra sao?",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -907,8 +907,8 @@ export const vocabularyData = [
             },
             {
                 id:5,
-                title:"コミュニケーション",
-                desc:"Giao tiếp",
+                title:"パソコンの",
+                desc:"Máy tính",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -962,13 +962,13 @@ export const vocabularyData = [
     {
         category: "人と人との関係",
         id:7,
-        desc:"Quan hệ giữa người với người(113 từ)",
+        desc:"Những điều vui (124 từ)",
         icon:"leaf",
         lession:[
             {
                 id:1,
-                title:"家族",
-                desc:"Gia đình",
+                title:"りょうこ",
+                desc:"Du lịch",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -992,8 +992,8 @@ export const vocabularyData = [
             },
             {
                 id:2,
-                title:"友達と知り合い",
-                desc:"Bạn bè và người quen",
+                title:"スポーツ",
+                desc:"Thể thao",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1017,8 +1017,8 @@ export const vocabularyData = [
             },
             {
                 id:3,
-                title:"彼",
-                desc:"Người yêu",
+                title:"ファクション",
+                desc:"Thời trang",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1042,8 +1042,8 @@ export const vocabularyData = [
             },
             {
                 id:4,
-                title:"どんな人",
-                desc:"Là người như thế nào?",
+                title:"おしゃれ",
+                desc:"Ăn diện",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1067,8 +1067,8 @@ export const vocabularyData = [
             },
             {
                 id:5,
-                title:"コミュニケーション",
-                desc:"Giao tiếp",
+                title:"保美",
+                desc:"Sở thích",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1120,15 +1120,15 @@ export const vocabularyData = [
 
     },
     {
-        category: "人と人との関係",
+        category: "元気",
         id:8,
-        desc:"Quan hệ giữa người với người(113 từ)",
+        desc:"Vì sức khỏe (103 từ)",
         icon:"leaf",
         lession:[
             {
                 id:1,
-                title:"家族",
-                desc:"Gia đình",
+                title:"体",
+                desc:"Cơ thể",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1152,8 +1152,8 @@ export const vocabularyData = [
             },
             {
                 id:2,
-                title:"友達と知り合い",
-                desc:"Bạn bè và người quen",
+                title:"何のサイン",
+                desc:"Có dấu hiệu gì",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1177,8 +1177,8 @@ export const vocabularyData = [
             },
             {
                 id:3,
-                title:"彼",
-                desc:"Người yêu",
+                title:"木",
+                desc:"Triệu chứng",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1202,8 +1202,8 @@ export const vocabularyData = [
             },
             {
                 id:4,
-                title:"どんな人",
-                desc:"Là người như thế nào?",
+                title:"代用部？",
+                desc:"Không sao chứ",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1227,8 +1227,8 @@ export const vocabularyData = [
             },
             {
                 id:5,
-                title:"コミュニケーション",
-                desc:"Giao tiếp",
+                title:"病院",
+                desc:"Bệnh viện",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1280,15 +1280,15 @@ export const vocabularyData = [
 
     },
     {
-        category: "人と人との関係",
+        category: "自然と生活",
         id:9,
-        desc:"Quan hệ giữa người với người(113 từ)",
+        desc:"Tự nhiên và cuộc sống (100 từ) ",
         icon:"leaf",
         lession:[
             {
                 id:1,
-                title:"家族",
-                desc:"Gia đình",
+                title:"自然",
+                desc:"Tự nhiên",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1312,8 +1312,8 @@ export const vocabularyData = [
             },
             {
                 id:2,
-                title:"友達と知り合い",
-                desc:"Bạn bè và người quen",
+                title:"天気用",
+                desc:"Thời tiết",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1337,8 +1337,8 @@ export const vocabularyData = [
             },
             {
                 id:3,
-                title:"彼",
-                desc:"Người yêu",
+                title:"暑い日と寒い日",
+                desc:"Ngày nóng và ngày lạnh",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1362,8 +1362,8 @@ export const vocabularyData = [
             },
             {
                 id:4,
-                title:"どんな人",
-                desc:"Là người như thế nào?",
+                title:"どう変わる",
+                desc:"Thay đổi như thế nào?",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
@@ -1387,8 +1387,8 @@ export const vocabularyData = [
             },
             {
                 id:5,
-                title:"コミュニケーション",
-                desc:"Giao tiếp",
+                title:"日本の1年",
+                desc:"Một năm ở Nhật",
                 list:[
                     {id:1,kanji:"母親",hiragana:"ははおや",meaning:"mẹ tôi, người mẹ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
                     {id:2,kanji:"長女",hiragana:"ちょうじょ",meaning:"trưởng nữ",example:"母親の利用は、とてもおいしい",example_meaning:"Các món ăn của mẹ tôi nấu rất ngon!!"},
