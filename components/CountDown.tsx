@@ -2,12 +2,12 @@ import { Icon, Text } from 'native-base';
 import React, { useEffect, useState } from 'react'
 import { Alert, Dimensions, StyleSheet } from 'react-native';
 const { width, height } = Dimensions.get('screen')
-const CountDown = ({time, timeoutFlag, setTimeoutFlag}: any) => {
+const CountDown = ({time, timeoutFlag, setTimeoutFlag, finished}: any) => {
     const minutes = parseInt(time) / 60;
     const [m, setM]: any = useState(minutes-1);
     const [s, setS]: any = useState(59);
     useEffect(() => {
-        if (s > 0 || m > 0) {
+        if ((s > 0 || m > 0) && finished == false) {
             const interval = setInterval(() => {
                 setS((prevState: any) => prevState-1)
                 if (s == 1 && m > 0) {

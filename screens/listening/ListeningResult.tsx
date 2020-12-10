@@ -6,6 +6,7 @@ const {width, height} = Dimensions.get("screen");
 const ListeningResult = ({ navigation, route, listening }: any) => {
     const { lessonId, answers, category, questions } = route.params;
     console.log(answers)
+    console.log(questions)
     const correctAnswer = (result: any, answer: any) => {
         if (result.correct == true) {
             return "#0fc33b";
