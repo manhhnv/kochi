@@ -25,7 +25,7 @@ const CountDown = ({time, timeoutFlag, setTimeoutFlag}: any) => {
         <React.Fragment>
             <Text style={[styles.timeout, {left: 0.45*width}]}>
                 {m >= 10 ? m : '0'+m} : {s >= 10 ? s : '0'+s}
-                {m == 0 && s == 0 ? Alert.alert("Hết giờ"): null}
+                {m == 0 && s == 0 ? Alert.alert("Hết giờ 🕒"): null}
             </Text >
             <Icon name="time" style={[styles.timeout, {left: 0.35*width, fontSize: 25}]}/>
         </React.Fragment>

@@ -9,6 +9,7 @@ import NotificationScreen from '../screens/extensions/NotificationScreen';
 import GrammarDetail from '../screens/grammars/GrammarDetail';
 import ListLessons from '../screens/grammars/ListLessons';
 import Home from '../screens/Home';
+import ListeningCategory from '../screens/listening/ListeningCategory';
 import Login from '../screens/Login';
 import Profile from '../screens/Profile';
 import ReadingCategory from '../screens/reading/ReadingCategory';
@@ -158,6 +159,15 @@ export function TabStackNavigator() {
         component={ReadingTest}
         options={{
           headerTitle: () => null,
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="ListeningCategory"
+        component={ListeningCategory}
+        options={{
+          headerTitle: "Nghe hiểu N3",
           headerStyle: { backgroundColor: "#00CE9F", },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
