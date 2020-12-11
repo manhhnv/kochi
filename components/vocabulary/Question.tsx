@@ -52,7 +52,7 @@ const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTes
             }
         }
         
-        // console.log("===========",groupAnswser);
+
 
         const nextQuestion = () => {
             setChoose(false);
@@ -62,7 +62,6 @@ const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTes
         
     return (    
         <Content>
-     
             <View style={styles.front}>
                 <Text style={styles.text}>Question</Text> 
                 <View style={styles.card}>
@@ -77,52 +76,15 @@ const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTes
                         </CardItem>
                         <CardItem bordered>
                             <Body style={{alignItems:"center",justifyContent:"center"}}>
-                                <Text style={[{textAlign:"center"},!choose ? {display:"none"} : {}]}>{answer}</Text>
+                                <Text style={[{textAlign:"center"}, !choose ? {display: "none"} : {} ]}>{answer}</Text>
                             </Body>
                         </CardItem>
                     </Card>
                     <View style={{marginTop:10}}>
-                    {/* <Button 
-                            info  full 
-                            style={[{marginBottom:2}, correct? {backgroundColor:"yellow"} : {backgroundColor:"red"} ]} 
-                            onPress={() => checkAnswer(groupAnswser[0].text)}
-                        >
-                                <Text>{groupAnswser[0].text}</Text>
-                        
-                    </Button> 
-                    <Button 
-                            info  full 
-                            style={[{marginBottom:2}, correct? s{backgroundColor:"yellow"} : {backgroundColor:"red"} ]} 
-                            onPress={() => checkAnswer(groupAnswser[1].text)}
-                           
-                        >
-                                <Text>{groupAnswser[1].text}</Text>
-                        
-                    </Button> 
-                    <Button 
-                            info  full 
-                            style={[{marginBottom:2}, correct? {backgroundColor:"yellow"} : {backgroundColor:"red"} ]} 
-                            onPress={() => checkAnswer(groupAnswser[2].text)}
-                            
-                        >
-                                <Text>{groupAnswser[2].text}</Text>
-                        
-                    </Button> 
-                    <Button 
-                            info  full 
-                            style={[{marginBottom:2}, correct ? {backgroundColor:"yellow"} : {backgroundColor:"red"} ]} 
-                            onPress={() => checkAnswer(groupAnswser[3].text)}
-                            
-                        >
-                                <Text>{groupAnswser[3].text}</Text>
-                        
-                    </Button> 
-                     */}
-                  
                     {groupAnswser.map((item,index) => (
                         <Button 
                             info  full key ={index} 
-                            style={[{marginBottom:2}, (choose && correct[index]) ? {backgroundColor:"#49fc61"} : choose ? {backgroundColor:"#f53a33"} : {}]} 
+                            style={[{marginBottom:2}, (choose && correct[index]) ? {backgroundColor:"#5cb85c"} : choose ? {backgroundColor:"#d9534f"} : {}]} 
                             onPress={() => checkAnswer(item,index)}
                         >
                                 <Text>{item.text}</Text>
