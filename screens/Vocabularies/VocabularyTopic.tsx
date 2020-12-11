@@ -44,7 +44,7 @@ export default function VocabularyTopic({navigation}: any) {
                     
                 </Left>
                 <Right>
-                      <Icon name="arrow-forward" style={[activeTopic == item.id ?{color:"#FFFFF"} : {color:"orange"} ]}/>
+                      <Icon name="arrow-forward" style={[activeTopic == item.id ?{color:"white"} : {color:"orange"} ]}/>
                 </Right>
             </ListItem>
             </Animatable.View>
