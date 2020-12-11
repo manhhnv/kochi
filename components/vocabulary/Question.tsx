@@ -77,7 +77,7 @@ const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTes
                         </CardItem>
                         <CardItem bordered>
                             <Body style={{alignItems:"center",justifyContent:"center"}}>
-                                <Text style={{textAlign:"center"}}>{answer}</Text>
+                                <Text style={[{textAlign:"center"},!choose ? {display:"none"} : {}]}>{answer}</Text>
                             </Body>
                         </CardItem>
                     </Card>

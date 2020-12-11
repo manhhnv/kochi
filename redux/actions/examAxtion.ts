@@ -1,7 +1,39 @@
+import Axios from "axios";
 import { grammarQuestions } from "../../data/grammarQuestions";
 import { listeningData } from "../../data/listeningData";
 import { setQuestions } from "../../data/readingQuestions";
+import { GET_EXAM, CHECK_ANSWER_EXAM } from '../../service/exam.service';
 
+export const getExam = async () => {
+    const response = Axios.get(`${GET_EXAM}`)
+    .then(res => {
+        if (res.data !== null) {
+            return res.data
+        }
+    })
+    .catch(e => {
+        console.log(e)
+    })
+    return response
+}
+export const checkAnswerExam = (input: any) => {
+    return async(dispatch: any) => {
+        Axios.post(`${CHECK_ANSWER_EXAM.url}`, {
+            input: input
+        })
+        .then(res => {
+            if (res.data !== null) {
+                dispatch({
+                    type: "UPDATE_HISTORY",
+                    payload: res.data
+                })
+            }
+        })
+        .catch(e => {
+            console.log(e)
+        })
+    }
+}
 export const generateVocabulary = async () => {
     let questions = grammarQuestions[1].questions.concat(grammarQuestions[0].questions);
     questions = questions.concat(grammarQuestions[2].questions)
