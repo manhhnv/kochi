@@ -11,15 +11,11 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import ProgressCircle from 'react-native-progress-circle'
 import { HomeStyles } from '../styles/index';
 import { API_URL } from '../env';
-import { me } from '../redux/actions/userAction';
-import { connect } from 'react-redux';
 const {width, height} = Dimensions.get('screen');
-const Home = ({navigation, user, me}: any) => {
+const Home = ({navigation}: any) => {
   const [showFAB, setShowFAB] = useState(false)
   const [segmentIndex, setSegmentIndex] = useState(1);
-  useEffect(() => {
-    me(user.token)
-  }, [])
+  // console.log(API_URL)
   const _renderComponentBySegment = () => {
     if (segmentIndex == 1) {
       return (
@@ -131,7 +127,7 @@ const Home = ({navigation, user, me}: any) => {
               <Text style={HomeStyles.category}>Danh mục</Text>
               <Row>
                 <Col style={{ backgroundColor: '#fff', margin: 10 }}>
-                  <TouchableOpacity onPress={() => {navigation.navigate("VocabularyOverview"); window.alert("Tính năng đang được phát triển...")}}>
+                  <TouchableOpacity onPress={() => {navigation.navigate("VocabularyTopic"); }}>
                     <Card style={HomeStyles.cardStyle}>
                       <CardItem>
                         <Left style={{ borderWidth: 0 }}>
@@ -312,14 +308,4 @@ const Home = ({navigation, user, me}: any) => {
     </Container>
   );
 }
-const mapStateToProps = (state: any) => {
-  return {
-    user: state.user
-  }
-}
-const mapDispatchToProps = (dispatch: any) => {
-  return {
-    me: (token: string) => dispatch(me(token))
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Home))
+export default React.memo(Home)

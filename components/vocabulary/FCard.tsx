@@ -2,50 +2,23 @@ import React from 'react';
 import { VocabularyFCardProps } from "../../types";
 import FlipCard from 'react-native-flip-card';
 import { Button, Col, Container, Content, Grid, Icon, Row, Thumbnail, View, } from 'native-base';
-import { ImageBackground, Dimensions, Text } from 'react-native';
+import { ImageBackground, Dimensions, Text,StyleSheet } from 'react-native';
 const { width, height } = Dimensions.get("screen");
 const FCard = ({
-    kanji, hiragana, vnjp, marked, mean, currentIndex,
-    previousWord, nextWord
+    kanji, hiragana, marked, mean, currentIndex,
+    previousWord, nextWord,amount,onMarked
 }: VocabularyFCardProps) => {
     return (
         <Content>
             <FlipCard style={{ marginTop: 0.08 * height }}>
-                <View style={{
-                    margin: 20, backgroundColor: "white", borderStyle: "solid",
-                    height: 0.4 * height, borderWidth: 0,
-                    borderRadius: 20,
-                    shadowColor: "#000",
-                    shadowOffset: {
-                        width: 0,
-                        height: 3,
-                    },
-                    shadowOpacity: 0.27,
-                    shadowRadius: 4.65,
-
-                    elevation: 6,
-                }}>
-                    <Text style={{ textAlign: "center", position: "relative", top: 0.12 * height, fontSize: 35, flexWrap: "wrap" }}>{kanji ? kanji : hiragana}</Text>
-                    <Text style={{ textAlign: "center", position: "relative", top: 0.12 * height, fontSize: 30, flexWrap: "wrap", paddingTop: 20 }}>{vnjp ? vnjp : mean}</Text>
-                    <Thumbnail square style={{ marginLeft: 0.07 * width }} source={require('../../assets/images/logo.png')}></Thumbnail>
+                <View style={styles.front}>
+                    <Text style={styles.text}>{kanji}</Text>
+                    <Thumbnail square style={styles.thumbnail } source={require('../../assets/images/logo.png')}></Thumbnail>
                 </View>
-                <View style={{
-                    margin: 20, backgroundColor: "white", borderStyle: "solid",
-                    height: 0.4 * height, borderWidth: 0,
-                    borderRadius: 20,
-                    shadowColor: "#000",
-                    shadowOffset: {
-                        width: 0,
-                        height: 3,
-                    },
-                    shadowOpacity: 0.27,
-                    shadowRadius: 4.65,
-
-                    elevation: 6,
-                }}>
-                    <Text style={{ textAlign: "center", position: "relative", top: 0.12 * height, fontSize: 35, flexWrap: "wrap" }}>{hiragana}</Text>
-                    <Text style={{ textAlign: "center", position: "relative", top: 0.12 * height, fontSize: 35, flexWrap: "wrap", paddingTop: 20 }}>{mean}</Text>
-                    <Thumbnail square style={{ marginLeft: 0.07 * width }} source={require('../../assets/images/logo.png')}></Thumbnail>
+                <View style={styles.front}>
+                    <Text style={styles.text}>{hiragana}</Text>
+                    <Text style={[styles.text, {paddingTop: 20} ]}>{mean}</Text>
+                    <Thumbnail square style={styles.thumbnail } source={require('../../assets/images/logo.png')}></Thumbnail>
                 </View>
             </FlipCard>
             <Grid>
@@ -57,7 +30,7 @@ const FCard = ({
                     </Col>
                     <Col>
                         <Button large bordered success>
-                            <Icon type="MaterialCommunityIcons" name="star" style={marked == true ? {color: "#fccb00"}: null}></Icon>
+                            <Icon type="MaterialCommunityIcons" name="star" style={marked == true ? {color: "#fccb00"}: null }  onPress={() => onMarked()}></Icon>
                         </Button>
                     </Col>
                     <Col>
@@ -66,7 +39,7 @@ const FCard = ({
                         </Button>
                     </Col>
                     <Col>
-                        <Button large bordered success onPress={() => nextWord()} disabled={currentIndex === 120 ? true : false}>
+                        <Button large bordered success onPress={() => nextWord()} disabled={currentIndex === amount ? true : false}>
                             <Icon type="MaterialCommunityIcons" name="skip-next"></Icon>
                         </Button>
                     </Col>
@@ -75,4 +48,39 @@ const FCard = ({
         </Content>
     )
 }
+const styles = StyleSheet.create({
+    front:{
+        margin: 20, backgroundColor: "white", borderStyle: "solid",
+        height: 0.4 * height, borderWidth: 0,
+        borderRadius: 20,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+
+        elevation: 6,
+        position:"relative",
+    },
+    text:{
+        textAlign: "center",
+        position: "relative",
+        top: 0.12 * height,
+        fontSize: 35,
+        flexWrap: "wrap" 
+
+
+    },
+    thumbnail:{
+         marginLeft: 0.07 * width,
+         position:"absolute",
+         top:10,
+         left:3,
+
+    },
+
+})
+
 export default FCard;

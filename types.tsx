@@ -35,6 +35,9 @@ export type TabTwoParamList = {
   TabTwoScreen: undefined;
 };
 export type TabStackParamList = {
+  VocabularyList:undefined,
+  VocabularyLession:undefined,
+  VocabularyTopic:undefined,
   HomeApp: undefined;
   VocabularyOverview: undefined;
   Lesson: undefined;
@@ -67,10 +70,17 @@ export type CourseOverviewType = {
   completedTest?: number;
   thumbnail?: any;
 }
+export type VocabularyTestProps = {
+  nextTest?: any,
+  dataQuestion?:any,
+  currentIndex?:any,
+  categoryId?:any,
+}
 export type VocabularyFCardProps = {
+  onMarked?:any;
   kanji?: string;
   hiragana?: string;
-  vnjp?: string;
+  amount?:number;
   marked?: boolean;
   mean?: string;
   previousWord: any;

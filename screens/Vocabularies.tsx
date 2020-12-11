@@ -15,6 +15,7 @@ const Vocabularies = ({ route, navigation, getVocabularyLesson, courses }: any) 
         setCurrentIndex((prevState) => prevState - 1);
     }
     const { lessonId } = route.params;
+    
     useEffect(() => {
         console.log(lessonId)
         getVocabularyLesson(lessonId);
