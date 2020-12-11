@@ -4,7 +4,7 @@ import { Dimensions, Text } from 'react-native';
 import { Button, Container, Content, View, Icon } from 'native-base';
 import { connect } from 'react-redux';
 const { width, height } = Dimensions.get("screen");
-const VocabularyFlashCard = ({  navigation, courses,data }: any) => {
+const VocabularyFlashCard = ({  navigation, courses, data }: any) => {
     const [currentIndex, setCurrentIndex] = useState(1);
     const [marked,setMarked] = useState(false);
 

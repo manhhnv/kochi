@@ -28,6 +28,7 @@ import Vocabularies from '../screens/Vocabularies';
 import VocabularyLession from "../screens/vocabularies/VocabularyLession";
 import VocabularyList from "../screens/vocabularies/VocabularyList";
 import VocabularyTopic from "../screens/vocabularies/VocabularyTopic";
+import VocabularyTest from "../screens/vocabularies/VocabularyTest";
 import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabStackParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -135,6 +136,17 @@ export function TabStackNavigator() {
         component={VocabularyList}
         options={{
           headerTitle: 'Danh sách từ vựng',
+          headerStyle: { backgroundColor: "#00CE9F" },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+          headerBackTitleStyle: {color: 'white'},
+          headerBackTitle: 'Home' 
+        }}
+        />
+       <TabStack.Screen
+        name="VocabularyTest"
+        component={VocabularyTest}
+        options={{
+          headerTitle: 'Bài test trắc nghiệm',
           headerStyle: { backgroundColor: "#00CE9F" },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
           headerBackTitleStyle: {color: 'white'},

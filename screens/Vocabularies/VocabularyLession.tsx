@@ -16,6 +16,16 @@ export default function VocabularyLession({navigation,route}: any) {
     const {categoryId} = route.params;
     const data:any = getVocabularyLesson(categoryId);
 
+    const handleSwitch = (item:any) => {
+        if(item.id != 6 ) {
+          navigation.navigate("VocabularyList", {listId:item.id,categoryId:categoryId});
+        }
+        else if( item.id == 6) {
+          navigation.navigate("VocabularyTest",{listId:item.id,categoryId:categoryId});
+
+        }
+    } ; 
+
     
   return (
     <ImageBackground
@@ -28,7 +38,7 @@ export default function VocabularyLession({navigation,route}: any) {
             <ScrollView style={{marginBottom:20}}>
               {data.map((item :any,index:number) => (
               <TouchableOpacity style={styles.container} 
-                                onPress={()=> navigation.navigate("VocabularyList",{listId:item.id,categoryId:categoryId})}
+                                onPress={()=> handleSwitch(item)}
                                 key={item.id}
               >
                 <Animatable.View animation="bounceInRight" style={styles.readingCategory}>
