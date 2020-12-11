@@ -15,6 +15,7 @@ const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTes
         const [choose,setChoose] = useState(false)
         const [answer,setAnswer] = useState('');
         const dataAnswer = getAllAnswer(categoryId,currentIndex );
+        
         const getAnswer = () => {
             for(let i = 0 ; i < dataAnswer.length; i++) {
                 if(dataAnswer[i].correct) {
@@ -33,11 +34,12 @@ const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTes
 
         useEffect(() => {
             setGroupAnswer(getFourAnswer());
+            console.log(getFourAnswer());
             setAnswer(getAnswer());
-        }, [currentIndex])
+        }, [currentIndex]);
 
         // const answer_ = getAnswer();
-        const checkAnswer =(item :any, idx: number) => {
+        const checkAnswer =(item :any, idx: number,groupAnswer:any) => {
             setChoose(true)
             if(item.text === answer) {
                 
@@ -50,6 +52,16 @@ const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTes
                    ]
                });
             }
+            else {
+                const newCorrect = [...correct];
+                
+                for(let i = 0 ; i < groupAnswer.length; i++) {
+                    if(groupAnswer[i].text === answer){
+                        newCorrect[i] = true;
+                    }
+                }
+                setCorrect([...newCorrect]);
+            }   
         }
         
 
@@ -85,7 +97,7 @@ const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTes
                         <Button 
                             info  full key ={index} 
                             style={[{marginBottom:2}, (choose && correct[index]) ? {backgroundColor:"#5cb85c"} : choose ? {backgroundColor:"#d9534f"} : {}]} 
-                            onPress={() => checkAnswer(item,index)}
+                            onPress={() => checkAnswer(item,index,groupAnswser)}
                         >
                                 <Text>{item.text}</Text>
                         
