@@ -32,7 +32,7 @@ const Home = ({navigation, user, me}: any) => {
               <Thumbnail style={ HomeStyles.thumbnailHistoryItem } source={require('../assets/images/history/practicing.png')}></Thumbnail>
             </Left>
             <Body>
-              <Text style={HomeStyles.titleHistoryItem}>Từ vựng JLPT N3</Text>
+              <Text style={HomeStyles.titleHistoryItem}>Nghe hiểu JLPT N3</Text>
             </Body>
             <Right>
               <Text note style={HomeStyles.scoreHistoryItem}>30/30</Text>
@@ -46,7 +46,7 @@ const Home = ({navigation, user, me}: any) => {
               <Text style={HomeStyles.titleHistoryItem}>Từ vựng JLPT N3</Text>
             </Body>
             <Right>
-              <Text note style={HomeStyles.scoreHistoryItem}>30/30</Text>
+              <Text note style={HomeStyles.scoreHistoryItem}>20/30</Text>
             </Right>
           </ListItem>
           <ListItem thumbnail>
@@ -54,10 +54,10 @@ const Home = ({navigation, user, me}: any) => {
               <Thumbnail style={ HomeStyles.thumbnailHistoryItem } source={require('../assets/images/history/practicing.png')}></Thumbnail>
             </Left>
             <Body>
-              <Text style={HomeStyles.titleHistoryItem}>Từ vựng JLPT N3</Text>
+              <Text style={HomeStyles.titleHistoryItem}>Đọc hiểu JLPT N3</Text>
             </Body>
             <Right>
-              <Text note style={HomeStyles.scoreHistoryItem}>30/30</Text>
+              <Text note style={HomeStyles.scoreHistoryItem}>25/30</Text>
             </Right>
           </ListItem>
         </List>

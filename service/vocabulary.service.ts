@@ -11,15 +11,15 @@ export const GET_BY_ID: Api = {
     method: HTTP_METHOD.GET
 }
 
-export const VOCABULARY_GET_BYCATEGORY: Api ={
+export const VOCABULARY_GET_BY_CATEGORY: Api ={
     url: `${API_URL}/vocabulary/category/getAll`,
     method: HTTP_METHOD.GET
 }
-export const VOCABULARY_GET_BYLESSON: Api ={
+export const VOCABULARY_GET_BY_LESSON: Api ={
     url: `${API_URL}/vocabulary/category/lession/getAll`,
     method: HTTP_METHOD.GET
 }
-export const GET_QUESTION_VOCABULARY: Api ={
+export const GET_QUESTION_VOCABULARY_API: Api ={
     url: `${API_URL}/vocabulary/question/getAll`,
     method: HTTP_METHOD.GET
 }
