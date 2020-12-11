@@ -85,7 +85,7 @@ const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTes
                     {groupAnswser.map((item,index) => (
                         <Button 
                             info  full key ={index} 
-                            style={[{marginBottom:2}, (choose && correct[index]) ? {backgroundColor:"#49fc61"} : choose ? {backgroundColor:"#f53a33"} : {}]} 
+                            style={[{marginBottom:2}, (choose && correct[index]) ? {backgroundColor:"#5cb85c"} : choose ? {backgroundColor:"#d9534f"} : {}]} 
                             onPress={() => checkAnswer(item,index)}
                         >
                                 <Text>{item.text}</Text>
