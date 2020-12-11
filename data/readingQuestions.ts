@@ -1,4 +1,4 @@
-const setQuestions = [
+export const setQuestions = [
     {
         id: 1,
         title: "正解の自然ーショート",

@@ -5,6 +5,8 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import Exam from '../screens/exams/Exam';
+import ExamResult from '../screens/exams/ExamResult';
 import NotificationScreen from '../screens/extensions/NotificationScreen';
 import GrammarDetail from '../screens/grammars/GrammarDetail';
 import GrammarTestingResult from '../screens/grammars/GrammarTestingResult';
@@ -249,6 +251,24 @@ export function TabStackNavigator() {
         component={GrammarTestingResult}
         options={{
           headerTitle: "Đáp án ngữ pháp",
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="Exam"
+        component={Exam}
+        options={{
+          headerTitle: () => null,
+          headerStyle: { backgroundColor: "#00CE9F", },
+          headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
+        }}
+      />
+      <TabStack.Screen
+        name="ExamResult"
+        component={ExamResult}
+        options={{
+          headerTitle: "Đáp án thi thử",
           headerStyle: { backgroundColor: "#00CE9F", },
           headerTitleStyle: { fontWeight: "bold", color: "white", fontSize: 20 },
         }}
