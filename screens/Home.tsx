@@ -245,7 +245,7 @@ const Home = ({navigation, user, me}: any) => {
             <Row>
               <Col style={{ backgroundColor: '#fff', margin: 10 }}>
                 <Text style={HomeStyles.category}>Đề xuất thi thử</Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate("Exam")}>
                   <Card style={HomeStyles.cardStyle}>
                     <CardItem>
                       <Left style={{ borderWidth: 0 }}>
