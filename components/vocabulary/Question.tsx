@@ -62,7 +62,6 @@ const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTes
         
     return (    
         <Content>
-     
             <View style={styles.front}>
                 <Text style={styles.text}>Question</Text> 
                 <View style={styles.card}>
