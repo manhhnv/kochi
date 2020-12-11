@@ -1,3 +1,4 @@
+import { AnyIfEmpty } from 'react-redux';
 import { vocabularyData } from './vocabularyData';
 export const getVocabularyCategory = () => {
     let data = [];
@@ -59,14 +60,36 @@ export const getAllAnswer:any = (categoryId:number,questionId: number) => {
         data.push(Object.assign({},{text:answer,id:1,correct:true,question_text:question.kanji}));
         
     }
-    for(let i = 2 ; i < 5 ; i++){
+    for(let i = 2 ; i < 20 ; i++){
         const randomAnswer = allData[Math.floor(Math.random()*allData.length )].meaning;
         if(randomAnswer !== answer   ){
             data.push(Object.assign({},{text:randomAnswer,id:i,corrent:false}));
         }
+        if(data.length === 4){
+            break;
+        }
     }
     return data;
 }
+export const shuffle = (array:any) => {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
+  
 
 // console.log("---------------------",getAllAnswer(1,1));
 

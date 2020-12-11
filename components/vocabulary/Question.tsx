@@ -1,22 +1,65 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { VocabularyFCardProps } from "../../types";
 import FlipCard from 'react-native-flip-card';
 import { Button, Col, Container, Content, Thumbnail, View,Card, CardItem,Body,Text } from 'native-base';
 import { ImageBackground, Dimensions,StyleSheet } from 'react-native';
 const { width, height } = Dimensions.get("screen");
 import {VocabularyTestProps} from "../../types";
-import {getAllAnswer} from "../../data/vocabulary/getVocabularyContent";
+import {getAllAnswer,shuffle} from "../../data/vocabulary/getVocabularyContent";
+
 
 const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTestProps) => {
-    const dataAnswer = getAllAnswer(categoryId,currentIndex);
-    const getAnswer = () => {
-        for(let i = 0 ; i < dataAnswer.length; i++) {
-            if(dataAnswer[i].correct) {
-                return dataAnswer[i].text;
+
+        const [correct,setCorrect] = useState([false, false, false, false]);
+        const [groupAnswser, setGroupAnswer] = useState<any[]>([]);
+        const [choose,setChoose] = useState(false)
+        const [answer,setAnswer] = useState('');
+        const dataAnswer = getAllAnswer(categoryId,currentIndex );
+        const getAnswer = () => {
+            for(let i = 0 ; i < dataAnswer.length; i++) {
+                if(dataAnswer[i].correct) {
+                    return dataAnswer[i].text;
+                }
             }
         }
-    }
-    const answer_ = getAnswer();
+        const getFourAnswer = () => {
+            let data = [];
+            for(let i = 0 ; i < dataAnswer.length; i++){
+                data.push(Object.assign({},{text:dataAnswer[i].text,id:i +1}));
+            }
+            shuffle(data);
+            return data;
+        }
+
+        useEffect(() => {
+            setGroupAnswer(getFourAnswer());
+            setAnswer(getAnswer());
+        }, [currentIndex])
+
+        // const answer_ = getAnswer();
+        const checkAnswer =(item :any, idx: number) => {
+            setChoose(true)
+            if(item.text === answer) {
+                
+                
+               setCorrect(prev => {
+                   return [
+                       ...prev.slice(0, idx),
+                       true,
+                       ...prev.slice(idx + 1)
+                   ]
+               });
+            }
+        }
+        
+        // console.log("===========",groupAnswser);
+
+        const nextQuestion = () => {
+            setChoose(false);
+            setCorrect([false, false, false, false]);
+            nextTest();
+        }
+        
     return (    
         <Content>
      
@@ -34,12 +77,58 @@ const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTes
                         </CardItem>
                         <CardItem bordered>
                             <Body style={{alignItems:"center",justifyContent:"center"}}>
-                                <Text style={{textAlign:"center"}}>{answer_}</Text>
+                                <Text style={{textAlign:"center"}}>{answer}</Text>
                             </Body>
                         </CardItem>
                     </Card>
                     <View style={{marginTop:10}}>
-                    <Button info full ><Text> Light </Text></Button>
+                    {/* <Button 
+                            info  full 
+                            style={[{marginBottom:2}, correct? {backgroundColor:"yellow"} : {backgroundColor:"red"} ]} 
+                            onPress={() => checkAnswer(groupAnswser[0].text)}
+                        >
+                                <Text>{groupAnswser[0].text}</Text>
+                        
+                    </Button> 
+                    <Button 
+                            info  full 
+                            style={[{marginBottom:2}, correct? s{backgroundColor:"yellow"} : {backgroundColor:"red"} ]} 
+                            onPress={() => checkAnswer(groupAnswser[1].text)}
+                           
+                        >
+                                <Text>{groupAnswser[1].text}</Text>
+                        
+                    </Button> 
+                    <Button 
+                            info  full 
+                            style={[{marginBottom:2}, correct? {backgroundColor:"yellow"} : {backgroundColor:"red"} ]} 
+                            onPress={() => checkAnswer(groupAnswser[2].text)}
+                            
+                        >
+                                <Text>{groupAnswser[2].text}</Text>
+                        
+                    </Button> 
+                    <Button 
+                            info  full 
+                            style={[{marginBottom:2}, correct ? {backgroundColor:"yellow"} : {backgroundColor:"red"} ]} 
+                            onPress={() => checkAnswer(groupAnswser[3].text)}
+                            
+                        >
+                                <Text>{groupAnswser[3].text}</Text>
+                        
+                    </Button> 
+                     */}
+                  
+                    {groupAnswser.map((item,index) => (
+                        <Button 
+                            info  full key ={index} 
+                            style={[{marginBottom:2}, (choose && correct[index]) ? {backgroundColor:"#49fc61"} : choose ? {backgroundColor:"#f53a33"} : {}]} 
+                            onPress={() => checkAnswer(item,index)}
+                        >
+                                <Text>{item.text}</Text>
+                        
+                        </Button> 
+                    ))}
                     </View>
                     
                 </View>
@@ -47,7 +136,7 @@ const Question = ({dataQuestion,nextTest,currentIndex,categoryId} :VocabularyTes
             </View>
             <Button 
                 primary full
-                onPress={() => nextTest()}
+                onPress={() => nextQuestion()}
                 disabled={currentIndex == dataQuestion.length? true: false}
             ><Text style={{fontSize:25}}> NEXT </Text></Button>
             
